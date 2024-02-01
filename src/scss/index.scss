@@ -1,3 +1,6 @@
-body {
-    background-color: rgb(185, 16, 16);
+// Importing variables and Bootstrap styles
+@import 'variables';
+
+@layer bootstrap {
+  @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 }
