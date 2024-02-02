@@ -1,6 +1,134 @@
 // Importing variables and Bootstrap styles
 @import 'variables';
+@import 'header';
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-@layer bootstrap {
-  @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.active {
+  background-color: $primary-color;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+// Hero section styles
+.hero-section {
+  padding: 2rem 0;
+  background-color: $light-bg;
+
+  h1 {
+    font-size: 2.5rem; // Adjust the size as needed
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+      &:before {
+        content: '•'; // Adds a bullet-like symbol before each item
+        color: $primary-color;
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+      }
+    }
+  }
+
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+}
+
+// Footer styles
+footer {
+  background-color: $dark-bg;
+  color: $white-text;
+  padding: 2rem 0;
+
+  h2,
+  h5 {
+    color: $primary-color;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    line-height: 2;
+  }
+
+  a {
+    color: $white-text;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: lighten($white-text, 10%);
+    }
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* @Media section */
+@media (max-width: 1000px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #e3e6f3;
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    padding: 80px 0 0 10px;
+  }
+
+  .navbar.menu-active {
+    right: 0;
+  }
+
+  .mobile {
+    display: flex;
+    gap: 0.5em;
+    font-size: 2.4em;
+  }
+
+  #close {
+    display: initial;
+    font-size: 36px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  #bar {
+    display: initial;
+  }
 }
