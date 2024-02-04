@@ -21,57 +21,68 @@
     <script src="mobilemenu.js" defer></script>
   </head>
   <body>
-    <header class="text-bg-dark p-3">
-      <div class="container header">
-        <h1 class="logo"><span class="text-warning">Bid</span>Bazaar</h1>
-        <div class="navbar gap-5 justify-content-start">
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search items"
-              aria-label="Search"
-            />
-            <button class="btn btn-primary" type="submit">Search</button>
-          </form>
+    <header class="sticky-top bg-light">
+      <div class="text-bg-dark p-3">
+        <div class="container header">
+          <a href="index.html" class="text-decoration-none link-light"
+            ><h1 class="logo">
+              <span class="text-warning">Bid</span>Bazaar
+            </h1></a
+          >
+          <div class="navbar gap-5 justify-content-start">
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
 
-          <div>
-            <button class="btn btn-outline-success ms-2" type="button">
-              Login
-            </button>
-            <button class="btn btn-success ms-2" type="button">Sign In</button>
+            <div>
+              <button class="btn btn-outline-success ms-2" type="button">
+                Login
+              </button>
+              <button class="btn btn-success ms-2" type="button">
+                Sign In
+              </button>
+            </div>
+            <a href="#" aria-label="close" id="close"
+              ><i class="fa-solid fa-xmark"></i
+            ></a>
           </div>
-          <a href="#" aria-label="close" id="close"
-            ><i class="fa-solid fa-xmark"></i
-          ></a>
+          <div class="mobile">
+            <i id="bar" class="fa-solid fa-bars"></i>
+          </div>
         </div>
-        <div class="mobile">
-          <i id="bar" class="fa-solid fa-bars"></i>
+      </div>
+      <div class="container">
+        <div class="border-bottom border-dark-subtle">
+          <ul
+            class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold active"
+                aria-current="page"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="pages/listings">Listings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
     </header>
-    <div class="container">
-      <div class="border-bottom border-dark-subtle">
-        <ul
-          class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
-        >
-          <li class="nav-item">
-            <a class="nav-link fw-semibold active" aria-current="page" href="#"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-semibold" href="#">Auctions</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-semibold" href="#">Sell</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link fw-semibold" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
 
     <main class="container my-4">
       <section class="hero-section">
@@ -157,7 +168,7 @@
               </div>
             </div>
             <div class="col">
-              <div class="card h-100 text-center bg-info position-static">
+              <div class="card h-100 text-center bg-info">
                 <div class="card-body">
                   <div class="card-icon mb-2">
                     <i class="fas fa-trophy fa-3x"></i>

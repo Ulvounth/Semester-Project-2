@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join BidBazaar, your ultimate online auction destination. Sign up to sell, bid, and win. Experience the thrill of the auction today!"
+    />
+
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <title>BidBazaar | Home</title>
+    <script
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/0ea37d4b08.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/mobilemenu.js" defer></script>
+  </head>
+  <body>
+    <header class="sticky-top bg-light">
+      <div class="text-bg-dark p-3">
+        <div class="container header">
+          <a href="index.html" class="text-decoration-none link-light"
+            ><h1 class="logo">
+              <span class="text-warning">Bid</span>Bazaar
+            </h1></a
+          >
+          <div class="navbar gap-5 justify-content-start">
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+
+            <div>
+              <button class="btn btn-outline-success ms-2" type="button">
+                Login
+              </button>
+              <button class="btn btn-success ms-2" type="button">
+                Sign In
+              </button>
+            </div>
+            <a href="#" aria-label="close" id="close"
+              ><i class="fa-solid fa-xmark"></i
+            ></a>
+          </div>
+          <div class="mobile">
+            <i id="bar" class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="border-bottom border-dark-subtle">
+          <ul
+            class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
+          >
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold active"
+                aria-current="page"
+                href="#"
+                >Listings</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="container pt-5">
+        <h1 class="fs-3 mb-5 text-center">Listings</h1>
+        <select
+          class="form-select d-inline filter mb-5 w-25"
+          aria-label="Default select example"
+          id="filter"
+        >
+          <option selected value="all">All</option>
+          <option value="active">Active</option>
+        </select>
+        <div id="listings" class="row">
+          <div class="text-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center text-md-start">
+            <h2>BidBazaar</h2>
+          </div>
+          <div class="col-md-4 text-center">
+            <h5>Built with</h5>
+            <ul class="list-unstyled">
+              <li>HTML</li>
+              <li>Javascript</li>
+              <li>Bootstrap</li>
+              <li>Sass</li>
+            </ul>
+          </div>
+          <div class="col-md-4 d-flex flex-column text-center text-md-end">
+            <h5>Contact</h5>
+            <a href="https://www.linkedin.com" class="text-white me-2"
+              ><i class="fab fa-linkedin"></i> Linkedin</a
+            >
+            <a href="https://www.facebook.com" class="text-white me-2"
+              ><i class="fab fa-facebook-f"></i> Facebook</a
+            >
+            <a href="https://www.twitter.com" class="text-white me-2"
+              ><i class="fab fa-twitter"></i> Twitter</a
+            >
+          </div>
+        </div>
+        <div class="text-center">
+          <p class="mb-0">Copyright © 2024 Andreas Ulvund</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
