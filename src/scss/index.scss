@@ -1,6 +1,7 @@
 // Importing variables and Bootstrap styles
 @import 'variables';
 @import 'header';
+@import 'auth';
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -16,6 +17,15 @@
   padding: 5px;
   margin: 5px 0;
   border-radius: 5px;
+}
+
+.btn-outline-success {
+  color: $primary-color;
+  border-color: $primary-color;
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+  }
 }
 
 // Hero section styles
@@ -96,7 +106,7 @@ footer {
 }
 
 /* @Media section */
-@media (max-width: 1000px) {
+@include media-breakpoint-down(lg) {
   .navbar {
     display: flex;
     flex-direction: column;

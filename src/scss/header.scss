@@ -2,17 +2,6 @@
 
 // Custom navbar styling
 
-header {
-  .btn-outline-success {
-    color: $primary-color;
-    border-color: $primary-color;
-    &:hover {
-      background-color: $primary-color;
-      color: #fff;
-    }
-  }
-}
-
 .header {
   display: flex;
   align-items: center;

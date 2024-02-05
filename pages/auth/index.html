@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join BidBazaar, your ultimate online auction destination. Sign up to sell, bid, and win. Experience the thrill of the auction today!"
+    />
+
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <title>BidBazaar | Home</title>
+    <script
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/0ea37d4b08.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/src/js/ui/auth.js" defer></script>
+  </head>
+  <body
+    class="d-flex align-items-center justify-content-center flex-column bg-secondary-subtle vh-100"
+  >
+    <div
+      class="auth-container bg-white rounded-3 shadow position-relative overflow-hidden"
+      id="auth-container"
+    >
+      <!-- The rest of your container content goes here -->
+      <div class="form-container sign-up">
+        <a href="/index.html">
+          <div class="bg-warning text-center p-2">
+            <i class="fa-solid fa-house fs-5 text-dark"></i>
+          </div>
+        </a>
+        <form
+          class="d-flex flex-column align-items-center justify-content-center gap-2"
+        >
+          <h1>Create Account</h1>
+          <input type="text" class="form-control" placeholder="Username" />
+          <input type="email" class="form-control" placeholder="Email" />
+          <input type="password" class="form-control" placeholder="Password" />
+          <button
+            type="button"
+            class="btn btn-primary text-warning link-success border-0 bg-dark text-uppercase px-4 my-3"
+          >
+            Sign Up
+          </button>
+        </form>
+      </div>
+
+      <div class="form-container sign-in">
+        <a href="/index.html">
+          <div class="bg-warning text-center p-2">
+            <i class="fa-solid fa-house fs-5 text-dark"></i>
+          </div>
+        </a>
+        <form
+          class="d-flex flex-column align-items-center justify-content-center gap-2"
+        >
+          <h1>Login</h1>
+          <input type="email" class="form-control" placeholder="Email" />
+          <input type="password" class="form-control" placeholder="Password" />
+          <button
+            type="button"
+            class="btn btn-primary text-warning link-success border-0 bg-dark text-uppercase px-4 my-3"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left bg-dark">
+            <h1>Welcome Back!</h1>
+            <p>
+              Provide your personal details to access all the features of the
+              site
+            </p>
+            <button
+              class="hidden btn btn-outline-success bg-dark text-uppercase px-4 my-3"
+              id="login"
+            >
+              Login
+            </button>
+          </div>
+          <div class="toggle-panel toggle-right bg-dark">
+            <h1>Hello!</h1>
+            <p>
+              Sign up with your personal information to access all the features
+              of our site
+            </p>
+            <button
+              class="hidden btn btn-outline-success bg-dark text-uppercasepx-4 my-3"
+              id="register"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
