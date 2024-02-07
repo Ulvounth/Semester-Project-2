@@ -42,7 +42,7 @@
 
             <div>
               <a
-                class="btn btn-outline-success ms-2"
+                class="btn btn-outline-success ms-2 bg-dark"
                 href="/pages/auth/index.html"
               >
                 Login / Sign Up
@@ -63,18 +63,18 @@
             class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
           >
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/">Home</a>
+              <a class="nav-link fw-semibold" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="/pages/listings"
+                >Listings</a
+              >
             </li>
             <li class="nav-item">
               <a
                 class="nav-link fw-semibold active"
                 aria-current="page"
-                href="#"
-                >Listings</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/pages/sell/index.html"
+                href="/pages/sell/index.html"
                 >Sell</a
               >
             </li>
@@ -86,24 +86,64 @@
       </div>
     </header>
 
-    <main>
-      <section class="container pt-5">
-        <h1 class="fs-3 mb-5 text-center">Listings</h1>
-        <select
-          class="form-select d-inline filter mb-5 w-25"
-          aria-label="Default select example"
-          id="filter"
-        >
-          <option selected value="all">All</option>
-          <option value="active">Active</option>
-        </select>
-        <div id="listings" class="row">
-          <div class="text-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden">Loading...</span>
+    <main class="container my-4">
+      <h1 class="text-center mb-2">Sell online at BidBazaar!</h1>
+      <section class="my-4">
+        <div class="container p-0">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100 text-center bg-info">
+                <div class="card-body">
+                  <div class="card-icon mb-2">
+                    <i class="fas fa-user-plus fa-3x"></i>
+                  </div>
+                  <h3 class="card-title">Sign Up & Get Credits</h3>
+                  <p class="card-text fs-5">
+                    Join BidBazaar and receive 1,000 credits to start your
+                    bidding or selling journey.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 text-center bg-info">
+                <div class="card-body">
+                  <div class="card-icon mb-2">
+                    <i class="fas fa-gavel fa-3x"></i>
+                  </div>
+                  <h3 class="card-title">Bid or List Items</h3>
+                  <p class="card-text fs-5">
+                    Explore and bid on a variety of items, or list your own for
+                    others to bid on.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 text-center bg-info">
+                <div class="card-body">
+                  <div class="card-icon mb-2">
+                    <i class="fas fa-trophy fa-3x"></i>
+                  </div>
+                  <h3 class="card-title">Win, Sell, Earn</h3>
+                  <p class="card-text fs-5">
+                    Win bids to claim unique items, sell your items for credits,
+                    and keep the auction excitement going!
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
+      <h2 class="text-center">Start Quickly - Register Your Account Today!</h2>
+      <section class="d-flex justify-content-center gap-3">
+        <a
+          class="btn btn-primary text-warning link-light border-0 bg-dark text-uppercase px-4 my-3"
+          href="/pages/auth/index.html"
+        >
+          Login / Sign Up
+        </a>
       </section>
     </main>
 
