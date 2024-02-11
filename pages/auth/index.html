@@ -18,7 +18,12 @@
       src="https://kit.fontawesome.com/0ea37d4b08.js"
       crossorigin="anonymous"
     ></script>
-    <script src="/src/js/ui/auth.js" defer></script>
+    <script src="/src/js/ui/authActive.js" defer></script>
+    <script
+      type="module"
+      src="/src/js/listeners/auth/register.js"
+      defer
+    ></script>
   </head>
   <body
     class="d-flex align-items-center justify-content-center flex-column bg-secondary-subtle vh-100"
@@ -36,17 +41,47 @@
         </a>
         <form
           class="d-flex flex-column align-items-center justify-content-center gap-2"
+          id="registerForm"
         >
           <h1>Create Account</h1>
-          <input type="text" class="form-control" placeholder="Username" />
-          <input type="email" class="form-control" placeholder="Email" />
-          <input type="password" class="form-control" placeholder="Password" />
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="Username"
+            id="registerName"
+          />
+          <div id="message-includes"></div>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Email"
+            id="registerEmail"
+          />
+          <div id="message-endswith"></div>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Password"
+            id="registerPassword"
+          />
+          <div id="message-length"></div>
+          <input
+            type="url"
+            class="form-control"
+            name="avatar"
+            placeholder="Avatar URL"
+            id="registerAvatar"
+          />
           <button
-            type="button"
+            type="submit"
             class="btn btn-primary text-warning link-success border-0 bg-dark text-uppercase px-4 my-3"
           >
             Sign Up
           </button>
+          <div id="message-register"></div>
         </form>
       </div>
 
@@ -58,10 +93,25 @@
         </a>
         <form
           class="d-flex flex-column align-items-center justify-content-center gap-2"
+          id="loginForm"
         >
           <h1>Login</h1>
-          <input type="email" class="form-control" placeholder="Email" />
-          <input type="password" class="form-control" placeholder="Password" />
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Email"
+            id="loginEmail"
+            required
+          />
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            id="loginPassword"
+            minlength="8"
+            required
+          />
+          <div id="message"></div>
           <button
             type="button"
             class="btn btn-primary text-warning link-success border-0 bg-dark text-uppercase px-4 my-3"

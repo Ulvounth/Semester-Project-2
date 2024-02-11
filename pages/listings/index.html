@@ -19,6 +19,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="/mobilemenu.js" defer></script>
+    <script type="module" src="/src/js/pages/posts.js" defer></script>
   </head>
   <body>
     <header class="sticky-top bg-light">
@@ -67,7 +68,7 @@
             </li>
             <li class="nav-item">
               <a
-                class="nav-link fw-semibold active"
+                class="nav-link fw-semibold active-nav"
                 aria-current="page"
                 href="#"
                 >Listings</a
@@ -97,7 +98,7 @@
           <option selected value="all">All</option>
           <option value="active">Active</option>
         </select>
-        <div id="listings" class="row">
+        <div id="posts" class="row">
           <div class="text-center">
             <div class="spinner-border" role="status">
               <span class="visually-hidden">Loading...</span>
