@@ -1,4 +1,4 @@
-import { createElement } from './utils.js';
+import { createElement } from '../../utils/index.js';
 
 /**
  * Creates a delete button for a post and sets up a click event listener.

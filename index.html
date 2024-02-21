@@ -20,6 +20,7 @@
     ></script>
     <script src="mobilemenu.js" defer></script>
     <script type="module" src="/src/js/pages/home.js" defer></script>
+    <script type="module" src="/src/js/listeners/auth/logout.js" defer></script>
   </head>
   <body>
     <header class="sticky-top bg-light">
@@ -42,9 +43,17 @@
             </form>
 
             <div>
+              <a
+                class="btn btn-outline-success ms-2 bg-dark"
+                href="/pages/profile/index.html"
+                data-visible="loggedIn"
+              >
+                Profile
+              </a>
               <button
                 type="button"
                 class="btn btn-outline-success ms-2 bg-dark"
+                id="logout-btn"
                 data-visible="loggedIn"
               >
                 Logout
@@ -134,7 +143,9 @@
       </section>
 
       <section class="my-5">
-        <div class="d-flex align-items-center justify-content-between mb-4">
+        <div
+          class="d-flex align-items-center justify-content-between mb-4 border-bottom"
+        >
           <h2>Ending Soon</h2>
         </div>
         <div id="endingSoon" class="row">
@@ -148,7 +159,7 @@
 
       <section>
         <div class="container p-0">
-          <h2 class="mb-4">How it works</h2>
+          <h2 class="mb-4 border-bottom">How it works</h2>
           <div class="row g-4">
             <div class="col">
               <div class="card h-100 text-center m-auto bg-info">

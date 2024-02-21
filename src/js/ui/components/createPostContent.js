@@ -1,4 +1,7 @@
-import { createElement, calculateDaysUntilExpiration } from './utils.js';
+import {
+  createElement,
+  calculateDaysUntilExpiration,
+} from '../../utils/index.js';
 
 /**
  * Creates and returns the HTML content for a post. This content includes the post's title, media (if available),
@@ -27,23 +30,28 @@ export function createPostContent({ post, withHref }) {
   let wrapper = postContent;
 
   if (withHref) {
+    let postLinkHref;
+    if (window.location.pathname.includes('/pages/listings/')) {
+      postLinkHref = `singleListing.html?postId=${id}`;
+    } else {
+      postLinkHref = `pages/listings/singleListing.html?postId=${id}`;
+    }
+
     const postLink = createElement('a', {
       className: 'text-decoration-none text-dark',
-      href: `post.html?postId=${id}`,
+      href: postLinkHref,
     });
 
     postLink.appendChild(postContent);
     wrapper = postLink;
   }
 
-  if (media) {
-    const img = createElement('img', {
-      src: media,
-      className: 'card-img',
-      alt: 'Post image',
-    });
-    postContent.appendChild(img);
-  }
+  const img = createElement('img', {
+    src: media[0] ?? `/images/placeholder.jpg`,
+    className: 'card-img',
+    alt: 'Post image',
+  });
+  postContent.appendChild(img);
 
   const cardBody = createElement('div', {
     className: 'card-body',
@@ -56,7 +64,7 @@ export function createPostContent({ post, withHref }) {
 
   const buyButton = createElement('button', {
     className: 'btn btn-success py-1 m-1',
-    textContent: 'BID',
+    textContent: 'Read more',
   });
 
   const expirationIndicator = createElement('p', {

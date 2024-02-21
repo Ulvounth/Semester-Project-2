@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Join BidBazaar, your ultimate online auction destination. Sign up to sell, bid, and win. Experience the thrill of the auction today!"
+      content="Explore a wide range of items up for auction. Find your next great deal on BidBazaar."
     />
 
     <link rel="stylesheet" href="/dist/css/index.css" />
-    <title>BidBazaar | Home</title>
+    <title>BidBazaar | Listings</title>
     <script
       src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
@@ -20,6 +20,7 @@
     ></script>
     <script src="/mobilemenu.js" defer></script>
     <script type="module" src="/src/js/pages/posts.js" defer></script>
+    <script type="module" src="/src/js/listeners/auth/logout.js" defer></script>
   </head>
   <body>
     <header class="sticky-top bg-light">
@@ -43,8 +44,24 @@
 
             <div>
               <a
-                class="btn btn-outline-success ms-2"
+                class="btn btn-outline-success ms-2 bg-dark"
+                href="/pages/profile/index.html"
+                data-visible="loggedIn"
+              >
+                Profile
+              </a>
+              <button
+                type="button"
+                class="btn btn-outline-success ms-2 bg-dark"
+                id="logout-btn"
+                data-visible="loggedIn"
+              >
+                Logout
+              </button>
+              <a
+                class="btn btn-outline-success ms-2 bg-dark"
                 href="/pages/auth/index.html"
+                data-visible="loggedOut"
               >
                 Login / Sign Up
               </a>
@@ -92,12 +109,14 @@
         <h1 class="fs-3 mb-5 text-center">Listings</h1>
         <select
           class="form-select d-inline filter mb-5 w-25"
-          aria-label="Default select example"
+          aria-label="Filter Listings"
           id="filter"
         >
           <option selected value="all">All</option>
           <option value="active">Active</option>
+          <option value="newest">Newest</option>
         </select>
+
         <div id="posts" class="row">
           <div class="text-center">
             <div class="spinner-border" role="status">

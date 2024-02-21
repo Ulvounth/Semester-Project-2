@@ -1,4 +1,4 @@
-import { displayMessage } from '../shared/displayMessage.js';
+import { displayMessage } from './displayMessage.js';
 /**
  * Displays the modal for editing a post.
  *
@@ -24,36 +24,36 @@ function editModal(post) {
   const formId = `editPostForm-${post.id}`;
 
   const modalHTML = `
-    <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="editPostLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editPostLabel">Edit Post</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="${formId}">
-              <div class="mb-3">
-                <label for="postTitle" class="form-label">Title</label>
-                <input type="text" class="form-control" id="postTitle" value="${
-                  post.title
-                }" required>
-              </div>
-              <div class="mb-3">
-                <label for="postBody" class="form-label">Body</label>
-                <textarea class="form-control" id="postBody" required>${post.body}</textarea>
-              </div>
-              <div class="mb-3">
-                <label for="postMedia" class="form-label">Media URL</label>
-                <input type="url" class="form-control" id="postMedia" value="${post.media || ''}">
-              </div>
-              <button type="submit" class="btn btn-primary">Edit Post</button>
-            </form>
+      <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="editPostLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editPostLabel">Edit Post</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="${formId}">
+                <div class="mb-3">
+                  <label for="postTitle" class="form-label">Title</label>
+                  <input type="text" class="form-control" id="postTitle" value="${
+                    post.title
+                  }" required>
+                </div>
+                <div class="mb-3">
+                  <label for="postBody" class="form-label">Body</label>
+                  <textarea class="form-control" id="postBody" required>${post.body}</textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="postMedia" class="form-label">Media URL</label>
+                  <input type="url" class="form-control" id="postMedia" value="${post.media || ''}">
+                </div>
+                <button type="submit" class="btn btn-primary">Edit Post</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  `;
+    `;
 
   document.body.insertAdjacentHTML('beforeend', modalHTML);
 
@@ -115,37 +115,4 @@ function editModalSubmission(post, formId, modalId) {
   };
 }
 
-/**
- * Utility function to create an HTML element with specified attributes and properties.
- *
- * @param {string} tag - The HTML tag to create.
- * @param {Object} props - An object containing key-value pairs of attributes and properties to set on the element.
- * @returns {HTMLElement} The created HTML element.
- */
-function createElement(tag, props) {
-  const element = document.createElement(tag);
-
-  if (props) {
-    Object.keys(props).forEach((key) => {
-      element[key] = props[key];
-    });
-  }
-
-  return element;
-}
-
-// Utility function to calculate days until expiration
-function calculateDaysUntilExpiration(endDate) {
-  const today = new Date();
-  const timeDifference = new Date(endDate) - today;
-  const millisecondsPerDay = 1000 * 3600 * 24;
-  return Math.ceil(timeDifference / millisecondsPerDay);
-}
-
-export {
-  editPost,
-  editModal,
-  editModalSubmission,
-  createElement,
-  calculateDaysUntilExpiration,
-};
+export { editPost, editModal, editModalSubmission };

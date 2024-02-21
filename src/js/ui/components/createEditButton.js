@@ -1,4 +1,4 @@
-import { createElement } from './utils.js';
+import { createElement } from '../../utils/index.js';
 
 export function createEditButton(onClick) {
   const editButton = createElement('button', {

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="View and edit your profile on BidBazaar. Manage your listings, bids, and personal information"
+    />
+
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <title>BidBazaar | Profile</title>
+    <script
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/0ea37d4b08.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/mobilemenu.js" defer></script>
+    <script type="module" src="/src/js/listeners/auth/logout.js" defer></script>
+    <script type="module" src="/src/js/pages/profile.js" defer></script>
+    <script
+      type="module"
+      src="/src/js/listeners/profile/updateAvatar.js"
+      defer
+    ></script>
+  </head>
+  <body>
+    <header class="sticky-top bg-light">
+      <div class="text-bg-dark p-3">
+        <div class="container header">
+          <a href="/index.html" class="text-decoration-none link-light"
+            ><h1 class="logo">
+              <span class="text-warning">Bid</span>Bazaar
+            </h1></a
+          >
+          <div class="navbar gap-5 justify-content-start">
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+
+            <div>
+              <a
+                class="btn btn-outline-success ms-2 bg-dark"
+                aria-current="page"
+                href="/pages/profile/index.html"
+                data-visible="loggedIn"
+              >
+                Profile
+              </a>
+              <button
+                type="button"
+                id="logout-btn"
+                class="btn btn-outline-success ms-2 bg-dark"
+                data-visible="loggedIn"
+              >
+                Logout
+              </button>
+              <a
+                class="btn btn-outline-success ms-2 bg-dark"
+                href="/pages/auth/index.html"
+                data-visible="loggedOut"
+              >
+                Login / Sign Up
+              </a>
+            </div>
+            <a href="#" aria-label="close" id="close"
+              ><i class="fa-solid fa-xmark"></i
+            ></a>
+          </div>
+          <div class="mobile">
+            <i id="bar" class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="border-bottom border-dark-subtle">
+          <ul
+            class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
+          >
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="/pages/listings/index.html"
+                >Listings</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="/pages/sell/index.html"
+                >Sell</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="container my-4">
+        <div class="row">
+          <!-- Profile Image and Change Form -->
+          <div class="col-md-6">
+            <div class="profile-image-wrapper text-center">
+              <img
+                src="/images/placeholder.jpg"
+                alt="Profile Image"
+                id="profileAvatar"
+                class="img-fluid rounded-circle"
+                style="max-width: 200px; height: auto"
+              />
+              <form id="avatarForm" class="mt-3">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="avatarUrlInput"
+                    class="form-control"
+                    placeholder="Enter new avatar URL"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-success btn-block my-3">
+                  Change Profile Image
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Profile Information -->
+          <div class="col-md-6 bg-light">
+            <div class="profile-info py-3">
+              <h3 id="username">Username</h3>
+              <p id="userEmail">Email@email.com</p>
+              <!-- Additional information can be added here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container accordion" id="profileAccordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link btn-block text-left"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                My listings
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#profileAccordion"
+          >
+            <div class="card-body">
+              <!-- Content for listings -->
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+              <button
+                class="btn btn-link btn-block text-left collapsed"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                My bids
+              </button>
+            </h2>
+          </div>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#profileAccordion"
+          >
+            <div class="card-body">
+              <!-- Content for bids -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-dark text-white py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center text-md-start">
+            <a href="index.html" class="text-decoration-none link-light"
+              ><h1 class="logo">
+                <span class="text-warning">Bid</span>Bazaar
+              </h1></a
+            >
+          </div>
+          <div class="col-md-4 text-center">
+            <h5 class="text-warning">Built with</h5>
+            <ul class="list-unstyled">
+              <li>HTML</li>
+              <li>Javascript</li>
+              <li>Bootstrap</li>
+              <li>Sass</li>
+            </ul>
+          </div>
+          <div class="col-md-4 d-flex flex-column text-center text-md-end">
+            <h5 class="text-warning">Contact</h5>
+            <a href="https://www.linkedin.com" class="text-white me-2"
+              ><i class="fab fa-linkedin"></i> Linkedin</a
+            >
+            <a href="https://www.facebook.com" class="text-white me-2"
+              ><i class="fab fa-facebook-f"></i> Facebook</a
+            >
+            <a href="https://www.twitter.com" class="text-white me-2"
+              ><i class="fab fa-twitter"></i> Twitter</a
+            >
+          </div>
+        </div>
+        <div class="text-center my-3">
+          <p class="mb-0">Copyright © 2024 Andreas Ulvund</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

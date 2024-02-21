@@ -1,6 +1,7 @@
 import { getEndingSoon } from '../api/posts/getEndingSoon.js';
 import { createPostCard } from '../ui/components/createPostCard.js';
-import { displayMessage } from '../ui/shared/displayMessage.js';
+import { displayMessage } from '../utils/index.js';
+import { updateLoginVisibility } from '../ui/auth.js';
 
 async function displayEndingSoon(posts) {
   const postsContainer = document.getElementById('endingSoon');
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     const posts = await getEndingSoon();
     displayEndingSoon(posts);
+    updateLoginVisibility();
   } catch (error) {
     console.error('Error fetching posts:', error);
     displayMessage(

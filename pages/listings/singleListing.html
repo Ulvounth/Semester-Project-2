@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Join BidBazaar, your ultimate online auction destination. Sign up to sell, bid, and win. Experience the thrill of the auction today!"
+      content="Explore a wide range of items up for auction. Find your next great deal on BidBazaar."
     />
 
     <link rel="stylesheet" href="/dist/css/index.css" />
-    <title>BidBazaar | Home</title>
+    <title>BidBazaar | Listings</title>
     <script
       src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
@@ -20,7 +20,7 @@
     ></script>
     <script src="/mobilemenu.js" defer></script>
     <script type="module" src="/src/js/listeners/auth/logout.js" defer></script>
-    <script type="module" src="/src/js/listeners/post/index.js" defer></script>
+    <script type="module" src="/src/js/pages/post.js" defer></script>
   </head>
   <body>
     <header class="sticky-top bg-light">
@@ -84,15 +84,12 @@
               <a class="nav-link fw-semibold" href="/index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/pages/listings"
+              <a class="nav-link fw-semibold" href="/pages/listings/index.html"
                 >Listings</a
               >
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link fw-semibold active-nav"
-                aria-current="page"
-                href="/pages/sell/index.html"
+              <a class="nav-link fw-semibold" href="/pages/sell/index.html"
                 >Sell</a
               >
             </li>
@@ -104,100 +101,77 @@
       </div>
     </header>
 
-    <main class="container my-4">
-      <h1 class="text-center mb-2">Sell online at BidBazaar!</h1>
-      <section class="my-4">
-        <div class="row gap-3">
-          <div class="col">
-            <div class="card h-100 text-center bg-info m-auto">
+    <main>
+      <div class="container mt-5">
+        <div class="row">
+          <!-- Image Section -->
+          <div class="col-lg-6">
+            <img
+              src="/images/heading.png"
+              alt="Listing Image"
+              id="listingImage"
+              class="single-listing-img"
+            />
+          </div>
+
+          <!-- Details Section -->
+          <div class="card-b bg-light col-lg-6">
+            <div class="card border-0 my-3">
               <div class="card-body">
-                <div class="card-icon mb-2">
-                  <i class="fas fa-user-plus fa-3x"></i>
+                <h5 class="card-title">Sold by</h5>
+                <div class="d-flex align-items-center gap-2">
+                  <i class="fa-solid fa-user"></i>
+                  <p class="card-text" id="sellerName"><strong>Name</strong></p>
                 </div>
-                <h3 class="card-title">Sign Up & Get Credits</h3>
-                <p class="card-text fs-5">
-                  Join BidBazaar and receive 1,000 credits to start your bidding
-                  or selling journey.
-                </p>
+                <p class="card-text" id="sellerEmail">name@example.com</p>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 text-center bg-info m-auto">
-              <div class="card-body">
-                <div class="card-icon mb-2">
-                  <i class="fas fa-gavel fa-3x"></i>
-                </div>
-                <h3 class="card-title">Bid or List Items</h3>
-                <p class="card-text fs-5">
-                  Explore and bid on a variety of items, or list your own for
-                  others to bid on.
-                </p>
-              </div>
+            <div class="card border-0 my-3">
+              <form
+                id="bidForm"
+                class="card-body d-flex justify-content-between align-items-center"
+              >
+                <p class="mb-0" id="currentBid"></p>
+                <input
+                  type="number"
+                  id="bidAmount"
+                  name="amount"
+                  class="form-control"
+                  placeholder="Enter your bid"
+                  required
+                  min="1"
+                />
+                <button
+                  type="submit"
+                  id="placeBidButton"
+                  class="btn btn-success"
+                >
+                  BID
+                </button>
+              </form>
+              <div id="messageFeedback"></div>
             </div>
-          </div>
-          <div class="col">
-            <div class="card h-100 text-center bg-info m-auto">
+            <div class="card border-0 my-3">
               <div class="card-body">
-                <div class="card-icon mb-2">
-                  <i class="fas fa-trophy fa-3x"></i>
-                </div>
-                <h3 class="card-title">Win, Sell, Earn</h3>
-                <p class="card-text fs-5">
-                  Win bids to claim unique items, sell your items for credits,
-                  and keep the auction excitement going!
-                </p>
+                Ends at:
+                <p id="endsAt"></p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section class="d-flex flex-column justify-content-center gap-3">
-        <h2 class="text-center" data-visible="loggedOut">
-          Start Quickly - Register Your Account Today!
-        </h2>
-        <a
-          class="btn btn-primary text-warning link-light border-0 bg-dark text-uppercase px-4 my-3"
-          href="/pages/auth/index.html"
-          data-visible="loggedOut"
-        >
-          Login / Sign Up
-        </a>
-      </section>
-      <section data-visible="loggedIn">
-        <h2>Create New Listing</h2>
-        <form
-          id="createListingForm"
-          class="d-flex flex-column gap-3 mt-4"
-          data-visible="loggedIn"
-        >
-          <input
-            type="text"
-            name="title"
-            required
-            placeholder="Title"
-            class="form-control"
-          />
-          <textarea
-            name="description"
-            placeholder="Description"
-            class="form-control"
-          ></textarea>
-          <input
-            type="url"
-            name="media"
-            placeholder="Media URL"
-            class="form-control"
-          />
-          <input
-            type="datetime-local"
-            name="endsAt"
-            required
-            class="form-control"
-          />
-          <button type="submit" class="btn btn-primary">Create Listing</button>
-        </form>
-      </section>
+        <div class="py-3">
+          <h1 id="listingTitle">Title</h1>
+          <p id="listingDescription">Description</p>
+        </div>
+
+        <!-- Bids Section -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <h2>Bids made</h2>
+            <div class="list-group gap-2 my-3"></div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="bg-dark text-white py-3">

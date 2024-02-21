@@ -1,11 +1,11 @@
-import { createElement, editPost } from './utils.js';
+import { createElement, editPost } from '../../utils/index.js';
 import { deletePost } from '../../api/deletePost.js';
 import {
   createPostContent,
   createDeleteButton,
   createEditButton,
 } from './index.js';
-import { decodedAccessToken } from '../../api/auth/index.js';
+import { profile } from '../../api/auth/state.js';
 
 /**
  * Creates a card element for a post with content, interaction elements, and optionally edit and delete buttons.
@@ -23,9 +23,9 @@ export function createPostCard({ post, withHref = true }) {
 
   const postContent = createPostContent({ post, withHref });
 
-  const userData = decodedAccessToken();
+  const userData = profile();
   // Proceed only if userData is not null and contains the expected properties
-  if (userData && userData.name && post.author.name.includes(userData.name)) {
+  if (userData && userData.name && post.seller.name.includes(userData.name)) {
     // User is logged in and authorized, so add edit and delete buttons
 
     const editButton = createEditButton((e) => {

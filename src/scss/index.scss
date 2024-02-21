@@ -39,8 +39,18 @@ body {
   width: 18rem;
 }
 
+.card-b .card {
+  width: 100%;
+}
+
 .card-img {
   height: 15rem;
+  object-fit: cover;
+}
+
+.single-listing-img {
+  max-height: 20rem;
+  width: 100%;
   object-fit: cover;
 }
 

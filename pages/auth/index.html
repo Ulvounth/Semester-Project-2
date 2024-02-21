@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Join BidBazaar, your ultimate online auction destination. Sign up to sell, bid, and win. Experience the thrill of the auction today!"
+      content="Join BidBazaar to start bidding on and listing items in our auction marketplace."
     />
 
     <link rel="stylesheet" href="/dist/css/index.css" />
-    <title>BidBazaar | Home</title>
+    <title>BidBazaar | Login/Register</title>
     <script
       src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
@@ -19,11 +19,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="/src/js/ui/authActive.js" defer></script>
-    <script
-      type="module"
-      src="/src/js/listeners/auth/register.js"
-      defer
-    ></script>
+    <script type="module" src="/src/js/listeners/auth/index.js" defer></script>
   </head>
   <body
     class="d-flex align-items-center justify-content-center flex-column bg-secondary-subtle vh-100"
@@ -50,6 +46,7 @@
             name="username"
             placeholder="Username"
             id="registerName"
+            required
           />
           <div id="message-includes"></div>
           <input
@@ -58,6 +55,7 @@
             name="email"
             placeholder="Email"
             id="registerEmail"
+            required
           />
           <div id="message-endswith"></div>
           <input
@@ -66,6 +64,7 @@
             name="password"
             placeholder="Password"
             id="registerPassword"
+            required
           />
           <div id="message-length"></div>
           <input
@@ -81,7 +80,7 @@
           >
             Sign Up
           </button>
-          <div id="message-register"></div>
+          <div id="message-registration"></div>
         </form>
       </div>
 
@@ -99,6 +98,7 @@
           <input
             type="email"
             class="form-control"
+            name="email"
             placeholder="Email"
             id="loginEmail"
             required
@@ -106,6 +106,7 @@
           <input
             type="password"
             class="form-control"
+            name="password"
             placeholder="Password"
             id="loginPassword"
             minlength="8"
@@ -113,7 +114,7 @@
           />
           <div id="message"></div>
           <button
-            type="button"
+            type="submit"
             class="btn btn-primary text-warning link-success border-0 bg-dark text-uppercase px-4 my-3"
           >
             Login
