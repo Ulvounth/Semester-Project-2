@@ -7,6 +7,12 @@ const documentTitle = document.querySelector('title');
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('postId');
 
+/**
+ * Fetches and displays the listing details for a specific post.
+ * Updates various elements on the page with the listing's information,
+ * including the title, description, image, seller information, and current bids.
+ * Initializes bid submission handling.
+ */
 export async function displayListing() {
   try {
     const post = await getPost(postId);

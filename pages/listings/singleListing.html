@@ -9,7 +9,7 @@
     />
 
     <link rel="stylesheet" href="/dist/css/index.css" />
-    <title>BidBazaar | Listings</title>
+    <title>BidBazaar | Single Listing</title>
     <script
       src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
@@ -17,6 +17,7 @@
     <script
       src="https://kit.fontawesome.com/0ea37d4b08.js"
       crossorigin="anonymous"
+      defer
     ></script>
     <script src="/mobilemenu.js" defer></script>
     <script type="module" src="/src/js/listeners/auth/logout.js" defer></script>
@@ -26,13 +27,18 @@
     <header class="sticky-top bg-light">
       <div class="text-bg-dark p-3">
         <div class="container header">
-          <a href="/index.html" class="text-decoration-none link-light"
-            ><h1 class="logo">
-              <span class="text-warning">Bid</span>Bazaar
-            </h1></a
+          <!-- Navigation and Logo -->
+          <a
+            href="/index.html"
+            class="text-decoration-none link-light"
+            aria-label="Back to Home"
           >
+            <h1 class="logo"><span class="text-warning">Bid</span>Bazaar</h1>
+          </a>
+
+          <!-- Search and Profile Options -->
           <div class="navbar gap-5 justify-content-start">
-            <form class="d-flex">
+            <form class="d-flex" aria-label="Search Form">
               <input
                 class="form-control me-2"
                 type="search"
@@ -42,19 +48,21 @@
               <button class="btn btn-primary" type="submit">Search</button>
             </form>
 
+            <!-- Authentication Links -->
             <div>
               <a
                 class="btn btn-outline-success ms-2 bg-dark"
                 href="/pages/profile/index.html"
                 data-visible="loggedIn"
+                aria-label="Profile"
+                >Profile</a
               >
-                Profile
-              </a>
               <button
                 type="button"
                 class="btn btn-outline-success ms-2 bg-dark"
                 id="logout-btn"
                 data-visible="loggedIn"
+                aria-label="Logout"
               >
                 Logout
               </button>
@@ -62,19 +70,22 @@
                 class="btn btn-outline-success ms-2 bg-dark"
                 href="/pages/auth/index.html"
                 data-visible="loggedOut"
+                aria-label="Login / Sign Up"
+                >Login / Sign Up</a
               >
-                Login / Sign Up
-              </a>
             </div>
-            <a href="#" aria-label="close" id="close"
+            <a href="#" aria-label="Close Menu" id="close"
               ><i class="fa-solid fa-xmark"></i
             ></a>
           </div>
-          <div class="mobile">
+
+          <div class="mobile" aria-label="Mobile Menu Button">
             <i id="bar" class="fa-solid fa-bars"></i>
           </div>
         </div>
       </div>
+
+      <!-- Secondary Navigation -->
       <div class="container">
         <div class="border-bottom border-dark-subtle">
           <ul
@@ -104,7 +115,7 @@
     <main>
       <div class="container mt-5">
         <div class="row">
-          <!-- Image Section -->
+          <!-- Listing Image -->
           <div class="col-lg-6">
             <img
               src="/images/heading.png"
@@ -114,8 +125,9 @@
             />
           </div>
 
-          <!-- Details Section -->
+          <!-- Seller and Bid Information -->
           <div class="card-b bg-light col-lg-6">
+            <!-- Seller Details -->
             <div class="card border-0 my-3">
               <div class="card-body">
                 <h5 class="card-title">Sold by</h5>
@@ -126,6 +138,8 @@
                 <p class="card-text" id="sellerEmail">name@example.com</p>
               </div>
             </div>
+
+            <!-- Bid Form -->
             <div class="card border-0 my-3">
               <form
                 id="bidForm"
@@ -151,6 +165,8 @@
               </form>
               <div id="messageFeedback"></div>
             </div>
+
+            <!-- Auction End Time -->
             <div class="card border-0 my-3">
               <div class="card-body">
                 Ends at:
@@ -159,6 +175,8 @@
             </div>
           </div>
         </div>
+
+        <!-- Listing Title and Description -->
         <div class="py-3">
           <h1 id="listingTitle">Title</h1>
           <p id="listingDescription">Description</p>
@@ -168,7 +186,7 @@
         <div class="row mt-4">
           <div class="col-12">
             <h2>Bids made</h2>
-            <div class="list-group gap-2 my-3"></div>
+            <div class="list-group gap-2 my-3" aria-label="List of Bids"></div>
           </div>
         </div>
       </div>
@@ -176,9 +194,13 @@
 
     <footer class="bg-dark text-white py-3">
       <div class="container">
+        <!-- Footer Content -->
         <div class="row">
           <div class="col-md-4 text-center text-md-start">
-            <a href="/index.html" class="text-decoration-none link-light"
+            <a
+              href="/index.html"
+              class="text-decoration-none link-light"
+              aria-label="Back to Home"
               ><h1 class="logo">
                 <span class="text-warning">Bid</span>Bazaar
               </h1></a
@@ -206,6 +228,7 @@
             >
           </div>
         </div>
+        <!-- Copyright Notice -->
         <div class="text-center my-3">
           <p class="mb-0">Copyright © 2024 Andreas Ulvund</p>
         </div>

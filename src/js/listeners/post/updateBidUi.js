@@ -1,3 +1,8 @@
+/**
+ * Updates the bidding UI based on the current state of the post.
+ * Disables the bid button and updates its text if the auction has ended.
+ * @param {Object} post The post object containing details about the auction.
+ */
 export function updateBidUi(post) {
   const bidButton = document.getElementById('placeBidButton');
   const bidAmountInput = document.getElementById('bidAmount');

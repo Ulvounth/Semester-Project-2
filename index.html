@@ -7,9 +7,9 @@
       name="description"
       content="Join BidBazaar, your ultimate online auction destination. Sign up to sell, bid, and win. Experience the thrill of the auction today!"
     />
-
     <link rel="stylesheet" href="./dist/css/index.css" />
     <title>BidBazaar | Home</title>
+
     <script
       src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
@@ -18,6 +18,7 @@
       src="https://kit.fontawesome.com/0ea37d4b08.js"
       crossorigin="anonymous"
     ></script>
+
     <script src="mobilemenu.js" defer></script>
     <script type="module" src="/src/js/pages/home.js" defer></script>
     <script type="module" src="/src/js/listeners/auth/logout.js" defer></script>
@@ -26,13 +27,19 @@
     <header class="sticky-top bg-light">
       <div class="text-bg-dark p-3">
         <div class="container header">
-          <a href="index.html" class="text-decoration-none link-light"
-            ><h1 class="logo">
-              <span class="text-warning">Bid</span>Bazaar
-            </h1></a
+          <!-- Logo and home link -->
+          <a
+            href="index.html"
+            class="text-decoration-none link-light"
+            aria-label="BidBazaar Home"
           >
+            <h1 class="logo"><span class="text-warning">Bid</span>Bazaar</h1>
+          </a>
+
+          <!-- Navigation bar with search and user options -->
           <div class="navbar gap-5 justify-content-start">
-            <form class="d-flex">
+            <!-- Search form -->
+            <form class="d-flex" aria-label="Quick search">
               <input
                 class="form-control me-2"
                 type="search"
@@ -42,11 +49,13 @@
               <button class="btn btn-primary" type="submit">Search</button>
             </form>
 
+            <!-- User action buttons -->
             <div>
               <a
                 class="btn btn-outline-success ms-2 bg-dark"
                 href="/pages/profile/index.html"
                 data-visible="loggedIn"
+                aria-label="View Profile"
               >
                 Profile
               </a>
@@ -55,6 +64,7 @@
                 class="btn btn-outline-success ms-2 bg-dark"
                 id="logout-btn"
                 data-visible="loggedIn"
+                aria-label="Logout"
               >
                 Logout
               </button>
@@ -62,23 +72,31 @@
                 class="btn btn-outline-success ms-2 bg-dark"
                 href="/pages/auth/index.html"
                 data-visible="loggedOut"
+                aria-label="Login or Sign Up"
               >
                 Login / Sign Up
               </a>
             </div>
-            <a href="#" aria-label="close" id="close"
-              ><i class="fa-solid fa-xmark"></i
-            ></a>
+
+            <!-- Close button for mobile menu -->
+            <a href="#" aria-label="Close Menu" id="close">
+              <i class="fa-solid fa-xmark"></i>
+            </a>
           </div>
-          <div class="mobile">
+
+          <!-- Mobile menu trigger -->
+          <div class="mobile" aria-label="Open Menu">
             <i id="bar" class="fa-solid fa-bars"></i>
           </div>
         </div>
       </div>
+
+      <!-- Secondary navigation bar -->
       <div class="container">
         <div class="border-bottom border-dark-subtle">
           <ul
             class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
+            aria-label="Secondary Navigation"
           >
             <li class="nav-item">
               <a
@@ -105,10 +123,12 @@
     </header>
 
     <main class="container my-4">
-      <section class="hero-section">
+      <!-- Hero section -->
+      <section class="hero-section" aria-label="Welcome to BidBazaar">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-6">
+              <!-- Hero image -->
               <img
                 src="images/heading.png"
                 alt="Auction Header"
@@ -116,6 +136,7 @@
               />
             </div>
             <div class="col-lg-6">
+              <!-- Hero content -->
               <h1>Welcome to BidBazaar!</h1>
               <p>
                 Dive into the world of online auctions where every click brings
@@ -142,13 +163,15 @@
         </div>
       </section>
 
-      <section class="my-5">
+      <!-- Ending Soon section -->
+      <section class="my-5" aria-label="Auctions Ending Soon">
         <div
           class="d-flex align-items-center justify-content-between mb-4 border-bottom"
         >
           <h2>Ending Soon</h2>
         </div>
         <div id="endingSoon" class="row">
+          <!-- Placeholder for dynamic content -->
           <div class="text-center">
             <div class="spinner-border" role="status">
               <span class="visually-hidden">Loading...</span>
@@ -157,10 +180,12 @@
         </div>
       </section>
 
-      <section>
+      <!-- How it works section -->
+      <section aria-label="How it Works">
         <div class="container p-0">
           <h2 class="mb-4 border-bottom">How it works</h2>
           <div class="row g-4">
+            <!-- Steps explained with icons -->
             <div class="col">
               <div class="card h-100 text-center m-auto bg-info">
                 <div class="card-body">
@@ -211,12 +236,11 @@
     <footer class="bg-dark text-white py-3">
       <div class="container">
         <div class="row">
+          <!-- Footer content with navigation and social links -->
           <div class="col-md-4 text-center text-md-start">
-            <a href="index.html" class="text-decoration-none link-light"
-              ><h1 class="logo">
-                <span class="text-warning">Bid</span>Bazaar
-              </h1></a
-            >
+            <a href="index.html" class="text-decoration-none link-light">
+              <h1 class="logo"><span class="text-warning">Bid</span>Bazaar</h1>
+            </a>
           </div>
           <div class="col-md-4 text-center">
             <h5 class="text-warning">Built with</h5>
@@ -229,18 +253,20 @@
           </div>
           <div class="col-md-4 d-flex flex-column text-center text-md-end">
             <h5 class="text-warning">Contact</h5>
-            <a href="https://www.linkedin.com" class="text-white me-2"
-              ><i class="fab fa-linkedin"></i> Linkedin</a
-            >
-            <a href="https://www.facebook.com" class="text-white me-2"
-              ><i class="fab fa-facebook-f"></i> Facebook</a
-            >
-            <a href="https://www.twitter.com" class="text-white me-2"
-              ><i class="fab fa-twitter"></i> Twitter</a
-            >
+            <!-- Social media links -->
+            <a href="https://www.linkedin.com" class="text-white me-2">
+              <i class="fab fa-linkedin"></i> Linkedin
+            </a>
+            <a href="https://www.facebook.com" class="text-white me-2">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.twitter.com" class="text-white me-2">
+              <i class="fab fa-twitter"></i> Twitter
+            </a>
           </div>
         </div>
         <div class="text-center my-3">
+          <!-- Copyright notice -->
           <p class="mb-0">Copyright © 2024 Andreas Ulvund</p>
         </div>
       </div>

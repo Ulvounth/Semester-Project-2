@@ -9,7 +9,8 @@
     />
 
     <link rel="stylesheet" href="/dist/css/index.css" />
-    <title>BidBazaar | Home</title>
+    <title>BidBazaar | Sell</title>
+
     <script
       src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
@@ -17,6 +18,7 @@
     <script
       src="https://kit.fontawesome.com/0ea37d4b08.js"
       crossorigin="anonymous"
+      defer
     ></script>
     <script src="/mobilemenu.js" defer></script>
     <script type="module" src="/src/js/listeners/auth/logout.js" defer></script>
@@ -26,13 +28,18 @@
     <header class="sticky-top bg-light">
       <div class="text-bg-dark p-3">
         <div class="container header">
-          <a href="/index.html" class="text-decoration-none link-light"
+          <!-- Navigation header with logo and links -->
+          <a
+            href="/index.html"
+            class="text-decoration-none link-light"
+            aria-label="Back to Home"
             ><h1 class="logo">
               <span class="text-warning">Bid</span>Bazaar
             </h1></a
           >
           <div class="navbar gap-5 justify-content-start">
-            <form class="d-flex">
+            <!-- Search form -->
+            <form class="d-flex" aria-label="Site Search">
               <input
                 class="form-control me-2"
                 type="search"
@@ -42,14 +49,14 @@
               <button class="btn btn-primary" type="submit">Search</button>
             </form>
 
+            <!-- Profile and authentication links -->
             <div>
               <a
                 class="btn btn-outline-success ms-2 bg-dark"
                 href="/pages/profile/index.html"
                 data-visible="loggedIn"
+                >Profile</a
               >
-                Profile
-              </a>
               <button
                 type="button"
                 class="btn btn-outline-success ms-2 bg-dark"
@@ -62,19 +69,20 @@
                 class="btn btn-outline-success ms-2 bg-dark"
                 href="/pages/auth/index.html"
                 data-visible="loggedOut"
+                >Login / Sign Up</a
               >
-                Login / Sign Up
-              </a>
             </div>
-            <a href="#" aria-label="close" id="close"
+            <a href="#" aria-label="Close Menu" id="close"
               ><i class="fa-solid fa-xmark"></i
             ></a>
           </div>
-          <div class="mobile">
+          <div class="mobile" aria-label="Open Mobile Menu">
             <i id="bar" class="fa-solid fa-bars"></i>
           </div>
         </div>
       </div>
+
+      <!-- Secondary navigation -->
       <div class="container">
         <div class="border-bottom border-dark-subtle">
           <ul
@@ -92,7 +100,7 @@
               <a
                 class="nav-link fw-semibold active-nav"
                 aria-current="page"
-                href="/pages/sell/index.html"
+                href="#"
                 >Sell</a
               >
             </li>
@@ -106,8 +114,10 @@
 
     <main class="container my-4">
       <h1 class="text-center mb-2">Sell online at BidBazaar!</h1>
+      <!-- Introduction section for sellers -->
       <section class="my-4">
         <div class="row gap-3">
+          <!-- Each card describes a benefit or feature of selling on BidBazaar -->
           <div class="col">
             <div class="card h-100 text-center bg-info m-auto">
               <div class="card-body">
@@ -152,6 +162,8 @@
           </div>
         </div>
       </section>
+
+      <!-- Section visible to logged-out users prompting them to register or login -->
       <section class="d-flex flex-column justify-content-center gap-3">
         <h2 class="text-center" data-visible="loggedOut">
           Start Quickly - Register Your Account Today!
@@ -160,10 +172,11 @@
           class="btn btn-primary text-warning link-light border-0 bg-dark text-uppercase px-4 my-3"
           href="/pages/auth/index.html"
           data-visible="loggedOut"
+          >Login / Sign Up</a
         >
-          Login / Sign Up
-        </a>
       </section>
+
+      <!-- New listing creation form for logged-in users -->
       <section data-visible="loggedIn">
         <h2>Create New Listing</h2>
         <form
@@ -202,6 +215,7 @@
 
     <footer class="bg-dark text-white py-3">
       <div class="container">
+        <!-- Footer content: contact info, copyright notice, and built with -->
         <div class="row">
           <div class="col-md-4 text-center text-md-start">
             <a href="/index.html" class="text-decoration-none link-light"

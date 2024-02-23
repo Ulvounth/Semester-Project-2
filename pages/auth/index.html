@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="/dist/css/index.css" />
     <title>BidBazaar | Login/Register</title>
+
     <script
       src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
@@ -17,7 +18,9 @@
     <script
       src="https://kit.fontawesome.com/0ea37d4b08.js"
       crossorigin="anonymous"
+      defer
     ></script>
+
     <script src="/src/js/ui/authActive.js" defer></script>
     <script type="module" src="/src/js/listeners/auth/index.js" defer></script>
   </head>
@@ -27,19 +30,24 @@
     <div
       class="auth-container bg-white rounded-3 shadow position-relative overflow-hidden"
       id="auth-container"
+      aria-label="Authentication Container"
     >
-      <!-- The rest of your container content goes here -->
+      <!-- Registration form -->
       <div class="form-container sign-up">
-        <a href="/index.html">
+        <!-- Home button -->
+        <a href="/index.html" aria-label="Return to home">
           <div class="bg-warning text-center p-2">
             <i class="fa-solid fa-house fs-5 text-dark"></i>
           </div>
         </a>
+        <!-- Sign up form -->
         <form
           class="d-flex flex-column align-items-center justify-content-center gap-2"
           id="registerForm"
+          aria-label="Sign Up Form"
         >
           <h1>Create Account</h1>
+          <!-- Input fields for the registration form -->
           <input
             type="text"
             class="form-control"
@@ -47,6 +55,7 @@
             placeholder="Username"
             id="registerName"
             required
+            aria-describedby="message-includes"
           />
           <div id="message-includes"></div>
           <input
@@ -56,6 +65,7 @@
             placeholder="Email"
             id="registerEmail"
             required
+            aria-describedby="message-endswith"
           />
           <div id="message-endswith"></div>
           <input
@@ -65,6 +75,7 @@
             placeholder="Password"
             id="registerPassword"
             required
+            aria-describedby="message-length"
           />
           <div id="message-length"></div>
           <input
@@ -73,10 +84,13 @@
             name="avatar"
             placeholder="Avatar URL"
             id="registerAvatar"
+            aria-describedby="Avatar URL optional"
           />
+          <!-- Sign up button -->
           <button
             type="submit"
             class="btn btn-primary text-warning link-success border-0 bg-dark text-uppercase px-4 my-3"
+            aria-label="Sign Up Button"
           >
             Sign Up
           </button>
@@ -84,17 +98,22 @@
         </form>
       </div>
 
+      <!-- Login form -->
       <div class="form-container sign-in">
-        <a href="/index.html">
+        <!-- Home button -->
+        <a href="/index.html" aria-label="Return to home">
           <div class="bg-warning text-center p-2">
             <i class="fa-solid fa-house fs-5 text-dark"></i>
           </div>
         </a>
+        <!-- Login form -->
         <form
           class="d-flex flex-column align-items-center justify-content-center gap-2"
           id="loginForm"
+          aria-label="Login Form"
         >
           <h1>Login</h1>
+          <!-- Input fields for the login form -->
           <input
             type="email"
             class="form-control"
@@ -113,17 +132,24 @@
             required
           />
           <div id="message"></div>
+          <!-- Login button -->
           <button
             type="submit"
             class="btn btn-primary text-warning link-success border-0 bg-dark text-uppercase px-4 my-3"
+            aria-label="Login Button"
           >
             Login
           </button>
         </form>
       </div>
 
-      <div class="toggle-container">
+      <!-- Toggle container for switching between login and registration -->
+      <div
+        class="toggle-container"
+        aria-label="Toggle between Login and Register"
+      >
         <div class="toggle">
+          <!-- Login panel -->
           <div class="toggle-panel toggle-left bg-dark">
             <h1>Welcome Back!</h1>
             <p>
@@ -137,6 +163,7 @@
               Login
             </button>
           </div>
+          <!-- Register panel -->
           <div class="toggle-panel toggle-right bg-dark">
             <h1>Hello!</h1>
             <p>

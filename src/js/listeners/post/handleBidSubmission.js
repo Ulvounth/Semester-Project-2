@@ -2,6 +2,10 @@ import { displayMessage } from '../../utils/displayMessage.js';
 import { isLoggedIn } from '../../api/auth/state.js';
 import { getBid } from '../../api/posts/getBid.js';
 
+/**
+ * Attaches an event listener to the bid submission form. Validates user authentication,
+ * submits the bid, and updates the UI based on the response.
+ */
 export function handleBidSubmission() {
   const bidForm = document.getElementById('bidForm'); // Changed the form ID to be unique
 

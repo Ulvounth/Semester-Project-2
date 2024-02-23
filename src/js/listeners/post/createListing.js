@@ -1,6 +1,10 @@
 import { createListing } from '../../api/posts/index.js';
 import { displayMessage } from '../../utils/displayMessage.js';
 
+/**
+ * Event listener for the listing creation form submission.
+ * Extracts data from the form, attempts to create a listing via the API, and handles the UI response.
+ */
 const form = document.getElementById('createListingForm');
 
 form.addEventListener('submit', async (e) => {

@@ -1,11 +1,14 @@
 import { registerUser } from '../../api/auth/registerUser.js';
 import { displayMessage, isValidNoroffEmail } from '../../utils/index.js';
 
+/**
+ * Handles the registration form submission. Validates the input and attempts to register the user.
+ * @param {Event} event The form submission event.
+ */
 export async function registerListener(event) {
   event.preventDefault();
   const form = event.target;
   const data = new FormData(form);
-  console.log(data);
 
   const name = data.get('username');
   const email = data.get('email');
@@ -44,7 +47,7 @@ export async function registerListener(event) {
 
     // If the registration is successful
     alert('Registration successful!');
-    window.location.href = '/index.html'; // Redirect or handle successful registration
+    window.location.href = '/index.html';
   } catch (error) {
     // Handle errors from registration attempt
     console.error('Registration error:', error);

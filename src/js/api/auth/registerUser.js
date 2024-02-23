@@ -1,12 +1,21 @@
 import { headers } from '../headers.js';
 
+/**
+ * Registers a new user with the provided details.
+ * @param {string} name The user's name.
+ * @param {string} email The user's email address.
+ * @param {string} password The user's password.
+ * @param {string} avatar The URL to the user's avatar image.
+ * @returns {Promise<Object>} The response object from the registration API.
+ * @throws {Error} Throws an error if registration fails.
+ */
 export async function registerUser(name, email, password, avatar) {
   console.log({ name, email, password, avatar });
   try {
     const response = await fetch(
       `https://api.noroff.dev/api/v1/auction/auth/register`,
       {
-        method: 'POST', // HTTP methods are typically uppercase
+        method: 'POST',
         body: JSON.stringify({ name, email, password, avatar }),
         headers: headers('application/json'),
       },

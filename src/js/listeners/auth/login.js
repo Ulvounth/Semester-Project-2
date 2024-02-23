@@ -2,7 +2,10 @@
 import { loginUser } from '../../api/auth/loginUser.js';
 import { displayMessage, isValidNoroffEmail } from '../../utils/index.js';
 
-// Define the loginListener function
+/**
+ * Handles the login form submission. Validates the input and attempts to log the user in.
+ * @param {Event} event The form submission event.
+ */
 export async function loginListener(event) {
   event.preventDefault();
 

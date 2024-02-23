@@ -1,3 +1,8 @@
+/**
+ * Calculates the number of days remaining until a specified end date.
+ * @param {string | Date} endDate The end date as a string or Date object.
+ * @returns {number} The number of days until the end date. Rounds up to the nearest whole number.
+ */
 function calculateDaysUntilExpiration(endDate) {
   const today = new Date();
   const timeDifference = new Date(endDate) - today;
@@ -5,6 +10,12 @@ function calculateDaysUntilExpiration(endDate) {
   return Math.ceil(timeDifference / millisecondsPerDay);
 }
 
+/**
+ * Updates the text content of an element with the ID 'endsAt' to show the remaining time
+ * until the auction ends. Displays the time in days, hours, and minutes if the auction
+ * is still active, or indicates that the auction has ended.
+ * @param {string | Date} endsAt The end date and time of the auction as a string or Date object.
+ */
 function updateAuctionEndTime(endsAt) {
   const endsAtElement = document.getElementById('endsAt');
   const endTime = new Date(endsAt);
