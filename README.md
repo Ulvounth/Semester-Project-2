@@ -54,7 +54,7 @@ npm run build
 | Kanban Board | https://github.com/users/Ulvounth/projects/1/views/1 |
 | Design prototype | https://www.figma.com/file/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=0%3A1&mode=design&t=JZQ9H85WOI5FOTfd-1 |
 | Style Guide | https://www.figma.com/file/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=10%3A23&mode=design&t=JZQ9H85WOI5FOTfd-1 |
-| Website host | Coming Soon |
+| Website host | https://bidbazaarr.netlify.app/ |
 | Repositary | https://github.com/Ulvounth/Semester-Project-2.git |
 
 ## Contact
