@@ -1,7 +1,9 @@
 import { getPost } from '../api/posts/index.js';
-import { handleBidSubmission } from '../listeners/post/handleBidSubmission.js';
-import { updateBidUi } from '../listeners/post/updateBidUi.js';
-import { displayMessage, updateAuctionEndTime } from '../utils/index.js';
+import {
+  displayMessage,
+  updateAuctionEndTime,
+  updateBidUi,
+} from '../utils/index.js';
 
 const documentTitle = document.querySelector('title');
 const urlParams = new URLSearchParams(window.location.search);
@@ -13,7 +15,7 @@ const postId = urlParams.get('postId');
  * including the title, description, image, seller information, and current bids.
  * Initializes bid submission handling.
  */
-export async function displayListing() {
+export async function initSinglePostPage() {
   try {
     const post = await getPost(postId);
 
@@ -49,7 +51,7 @@ export async function displayListing() {
 
     // Display bids or a default message if there are no bids
     const bidsContainer = document.querySelector('.list-group');
-    bidsContainer.innerHTML = ''; // Clear existing bids
+    bidsContainer.innerHTML = '';
     if (post.bids.length === 0) {
       const noBidsMessage = document.createElement('div');
       noBidsMessage.className = 'list-group-item';
@@ -79,9 +81,3 @@ export async function displayListing() {
     );
   }
 }
-
-// Call displayListing to initialize the page content
-displayListing().then(() => {
-  // Initialize bid submission handling after the listing is displayed
-  handleBidSubmission();
-});

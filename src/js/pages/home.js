@@ -20,14 +20,14 @@ async function displayEndingSoon(posts) {
 }
 
 /**
- * When the DOM content is fully loaded, fetches posts that are ending soon,
- * updates the display of these posts, and ensures that login-related UI elements
+ * Initializes the homepage by fetching posts that are ending soon,
+ * updating the display of these posts, and ensuring that login-related UI elements
  * are shown or hidden based on the user's authentication status.
  */
-document.addEventListener('DOMContentLoaded', async () => {
+async function initHomePage() {
   try {
     const posts = await getEndingSoon();
-    displayEndingSoon(posts);
+    await displayEndingSoon(posts);
     updateLoginVisibility();
   } catch (error) {
     console.error('Error fetching posts:', error);
@@ -37,4 +37,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       'There was an error fetching the posts.',
     );
   }
-});
+}
+
+export { initHomePage };

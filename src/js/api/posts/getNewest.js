@@ -3,7 +3,7 @@ import { headers } from '../headers.js';
 export async function getNewest() {
   try {
     const response = await fetch(
-      'https://api.noroff.dev/api/v1/auction/listings?_seller=true&_bids=true&_active=true&sort=endsAt&sortOrder=desc',
+      'https://api.noroff.dev/api/v1/auction/listings?_seller=true&_bids=true&_active=true&sort=created',
       {
         method: 'GET',
         headers: headers(),

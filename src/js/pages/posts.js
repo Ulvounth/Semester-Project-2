@@ -1,4 +1,4 @@
-import { allPosts, getNewest, getActive } from '../api/posts/index.js';
+import { allPosts, getNewest } from '../api/posts/index.js';
 import { createPostCard } from '../ui/components/createPostCard.js';
 import { displayMessage } from '../utils/displayMessage.js';
 import { updateLoginVisibility } from '../ui/auth.js';
@@ -26,9 +26,6 @@ async function fetchAndDisplayPosts(filter) {
   try {
     let posts;
     switch (filter) {
-      case 'active':
-        posts = await getActive();
-        break;
       case 'newest':
         posts = await getNewest();
         break;
@@ -47,11 +44,12 @@ async function fetchAndDisplayPosts(filter) {
 }
 
 /**
- * Initializes the page content by updating login visibility and setting up
- * the post filter functionality. Fetches and displays posts based on the
- * selected filter upon page load and when the filter selection changes.
+ * Initializes the posts page by setting up the filter functionality,
+ * updating login visibility, and fetching & displaying posts based on the
+ * selected filter. This function replaces the previous DOMContentLoaded setup.
+ * @param {string} [initialFilter='all'] The initial filter to apply when loading the posts.
  */
-document.addEventListener('DOMContentLoaded', async () => {
+export async function initPostsPage(initialFilter = 'all') {
   updateLoginVisibility();
 
   const filterSelect = document.getElementById('filter');
@@ -61,6 +59,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     );
   }
 
-  // Initial fetch and display of posts based on default or initially selected filter
-  fetchAndDisplayPosts(filterSelect ? filterSelect.value : 'all');
-});
+  // Initial fetch and display of posts based on provided initial filter or default
+  await fetchAndDisplayPosts(initialFilter);
+}

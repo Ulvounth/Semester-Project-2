@@ -14,7 +14,7 @@ export async function getProfiles() {
   throw new Error(response.statusText);
 }
 
-export async function getProfile(name) {
+export async function getProfileAndListings(name) {
   const response = await fetch(
     `https://api.noroff.dev/api/v1/auction/profiles/${name}?_listings=true`,
     { headers: headers() },

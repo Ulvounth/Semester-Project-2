@@ -21,8 +21,7 @@
       defer
     ></script>
     <script src="/mobilemenu.js" defer></script>
-    <script type="module" src="/src/js/listeners/auth/logout.js" defer></script>
-    <script type="module" src="/src/js/listeners/post/index.js" defer></script>
+    <script type="module" src="/src/js/index.js" defer></script>
   </head>
   <body>
     <header class="sticky-top bg-light">
@@ -30,7 +29,7 @@
         <div class="container header">
           <!-- Navigation header with logo and links -->
           <a
-            href="/index.html"
+            href="/"
             class="text-decoration-none link-light"
             aria-label="Back to Home"
             ><h1 class="logo">
@@ -53,7 +52,7 @@
             <div>
               <a
                 class="btn btn-outline-success ms-2 bg-dark"
-                href="/pages/profile/index.html"
+                href="/pages/profile/"
                 data-visible="loggedIn"
                 >Profile</a
               >
@@ -67,7 +66,7 @@
               </button>
               <a
                 class="btn btn-outline-success ms-2 bg-dark"
-                href="/pages/auth/index.html"
+                href="/pages/auth/"
                 data-visible="loggedOut"
                 >Login / Sign Up</a
               >
@@ -89,7 +88,7 @@
             class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
           >
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/index.html">Home</a>
+              <a class="nav-link fw-semibold" href="/">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-semibold" href="/pages/listings"
@@ -170,7 +169,7 @@
         </h2>
         <a
           class="btn btn-primary text-warning link-light border-0 bg-dark text-uppercase px-4 my-3"
-          href="/pages/auth/index.html"
+          href="/pages/auth/"
           data-visible="loggedOut"
           >Login / Sign Up</a
         >
@@ -218,7 +217,7 @@
         <!-- Footer content: contact info, copyright notice, and built with -->
         <div class="row">
           <div class="col-md-4 text-center text-md-start">
-            <a href="/index.html" class="text-decoration-none link-light"
+            <a href="/" class="text-decoration-none link-light"
               ><h1 class="logo">
                 <span class="text-warning">Bid</span>Bazaar
               </h1></a

@@ -20,8 +20,7 @@
     ></script>
 
     <script src="mobilemenu.js" defer></script>
-    <script type="module" src="/src/js/pages/home.js" defer></script>
-    <script type="module" src="/src/js/listeners/auth/logout.js" defer></script>
+    <script type="module" src="/src/js/index.js" defer></script>
   </head>
   <body>
     <header class="sticky-top bg-light">
@@ -29,7 +28,7 @@
         <div class="container header">
           <!-- Logo and home link -->
           <a
-            href="index.html"
+            href="/"
             class="text-decoration-none link-light"
             aria-label="BidBazaar Home"
           >
@@ -53,7 +52,7 @@
             <div>
               <a
                 class="btn btn-outline-success ms-2 bg-dark"
-                href="/pages/profile/index.html"
+                href="/pages/profile/"
                 data-visible="loggedIn"
                 aria-label="View Profile"
               >
@@ -70,7 +69,7 @@
               </button>
               <a
                 class="btn btn-outline-success ms-2 bg-dark"
-                href="/pages/auth/index.html"
+                href="/pages/auth/"
                 data-visible="loggedOut"
                 aria-label="Login or Sign Up"
               >
@@ -110,9 +109,7 @@
               <a class="nav-link fw-semibold" href="pages/listings">Listings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/pages/sell/index.html"
-                >Sell</a
-              >
+              <a class="nav-link fw-semibold" href="/pages/sell/">Sell</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-semibold" href="#">Contact</a>
@@ -155,7 +152,10 @@
                 Join BidBazaar now and be part of a community where the highest
                 bid always wins the day!
               </p>
-              <a href="/pages/auth/index.html" class="btn btn-success"
+              <a
+                href="/pages/auth/"
+                class="btn btn-success"
+                data-visible="loggedOut"
                 >Register</a
               >
             </div>
@@ -238,7 +238,7 @@
         <div class="row">
           <!-- Footer content with navigation and social links -->
           <div class="col-md-4 text-center text-md-start">
-            <a href="index.html" class="text-decoration-none link-light">
+            <a href="/" class="text-decoration-none link-light">
               <h1 class="logo"><span class="text-warning">Bid</span>Bazaar</h1>
             </a>
           </div>

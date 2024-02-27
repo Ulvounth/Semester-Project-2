@@ -3,3 +3,4 @@ export * from './dateUtils.js';
 export * from './displayMessage.js';
 export * from './modal.js';
 export * from './validation.js';
+export * from './updateBidUi.js';

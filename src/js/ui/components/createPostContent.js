@@ -30,11 +30,20 @@ export function createPostContent({ post, withHref }) {
   let wrapper = postContent;
 
   if (withHref) {
+    let baseUrl = window.location.origin; // Gets the base URL (e.g., http://example.com)
     let postLinkHref;
-    if (window.location.pathname.includes('/pages/listings/')) {
-      postLinkHref = `singleListing.html?postId=${id}`;
+
+    // Check if the current path is under /pages/listings/ or /pages/profile/
+    if (
+      window.location.pathname.includes('/pages/listings/') ||
+      window.location.pathname.includes('/pages/profile/')
+    ) {
+      // If yes, set the href relative to the base URL
+      postLinkHref = `${baseUrl}/pages/listings/single-listing/?postId=${id}`;
     } else {
-      postLinkHref = `pages/listings/singleListing.html?postId=${id}`;
+      // For other cases (like the root home page), also set it relative to the base URL
+      // This ensures consistency in the URL structure
+      postLinkHref = `${baseUrl}/pages/listings/single-listing/?postId=${id}`;
     }
 
     const postLink = createElement('a', {
@@ -64,7 +73,7 @@ export function createPostContent({ post, withHref }) {
 
   const buyButton = createElement('button', {
     className: 'btn btn-success py-1 m-1',
-    textContent: 'Read more',
+    textContent: 'Read More',
   });
 
   const expirationIndicator = createElement('p', {
