@@ -98,7 +98,7 @@ function editModalSubmission(post, formId, modalId) {
         const modalElement = document.getElementById(modalId);
         const modalInstance = bootstrap.Modal.getInstance(modalElement);
         modalInstance.hide();
-        modalElement.remove(); // Clean up the modal from DOM after closing
+        modalElement.remove();
         window.location.reload();
       }
     } catch (error) {

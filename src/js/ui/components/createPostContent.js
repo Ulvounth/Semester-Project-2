@@ -24,60 +24,47 @@ export function createPostContent({ post, withHref }) {
   const { id, title, media } = post;
 
   const postContent = createElement('div', {
-    className: 'card position-relative shadow border-0',
+    class: 'card position-relative shadow border-0',
   });
 
   let wrapper = postContent;
 
   if (withHref) {
-    let baseUrl = window.location.origin; // Gets the base URL (e.g., http://example.com)
-    let postLinkHref;
-
-    // Check if the current path is under /pages/listings/ or /pages/profile/
-    if (
-      window.location.pathname.includes('/pages/listings/') ||
-      window.location.pathname.includes('/pages/profile/')
-    ) {
-      // If yes, set the href relative to the base URL
-      postLinkHref = `${baseUrl}/pages/listings/single-listing/?postId=${id}`;
-    } else {
-      // For other cases (like the root home page), also set it relative to the base URL
-      // This ensures consistency in the URL structure
-      postLinkHref = `${baseUrl}/pages/listings/single-listing/?postId=${id}`;
-    }
+    const baseUrl = window.location.origin;
+    const postLinkHref = `${baseUrl}/pages/listings/single-listing/?postId=${id}`;
 
     const postLink = createElement('a', {
-      className: 'text-decoration-none text-dark',
+      class: 'text-decoration-none text-dark',
       href: postLinkHref,
     });
-
     postLink.appendChild(postContent);
     wrapper = postLink;
   }
 
   const img = createElement('img', {
     src: media[0] ?? `/images/placeholder.jpg`,
-    className: 'card-img',
+    class: 'card-img',
     alt: 'Post image',
+    loading: 'lazy',
   });
   postContent.appendChild(img);
 
   const cardBody = createElement('div', {
-    className: 'card-body',
+    class: 'card-body',
   });
 
   const postTitle = createElement('h4', {
-    className: 'card-title',
+    class: 'card-title',
     textContent: title,
   });
 
   const buyButton = createElement('button', {
-    className: 'btn btn-success py-1 m-1',
+    class: 'btn btn-success py-1 m-1',
     textContent: 'Read More',
   });
 
   const expirationIndicator = createElement('p', {
-    className: 'position-absolute top-0 end-0 bg-danger px-3 py-1 text-white',
+    class: 'position-absolute top-0 end-0 bg-danger px-3 py-1 text-white',
   });
 
   const daysUntilExpiration = calculateDaysUntilExpiration(post.endsAt);
