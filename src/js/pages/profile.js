@@ -3,112 +3,87 @@ import { load } from '../storage/load.js';
 import { createPostCard } from '../ui/components/index.js';
 import { displayMessage } from '../utils/displayMessage.js';
 import { updateLoginVisibility } from '../ui/auth.js';
+import {
+  createElement,
+  createImage,
+  createInput,
+  createButton,
+} from '../ui/components/index.js';
 
 export async function initProfilePage() {
   updateLoginVisibility();
-
   const mainContainer = document.querySelector('#profileContainer');
-  mainContainer.textContent = ''; // Clear existing content safely
+  mainContainer.textContent = '';
 
-  // Retrieve user information from local storage
   const { name } = load('user');
 
   try {
     const profileData = await getProfileAndListings(name);
-
-    // Profile Image Section
-    const profileImageWrapper = document.createElement('div');
-    profileImageWrapper.className = 'profile-image-wrapper text-center';
-
-    const img = document.createElement('img');
-    img.src = profileData.avatar || '/images/placeholder.jpg';
-    img.alt = 'Profile Image';
-    img.className = 'img-fluid rounded-circle';
+    const img = createImage(
+      profileData.avatar || '/images/placeholder.jpg',
+      'Profile Image',
+      'img-fluid rounded-circle',
+    );
     img.style.maxWidth = '200px';
     img.style.height = 'auto';
 
-    const form = document.createElement('form');
-    form.id = 'avatarForm';
-    form.className = 'mt-3';
-
-    const formGroup = document.createElement('div');
-    formGroup.className = 'form-group';
-
-    const input = document.createElement('input');
-    input.type = 'text';
+    const input = createInput('text', 'Enter new avatar URL', 'form-control');
     input.id = 'avatarUrlInput';
-    input.className = 'form-control';
-    input.placeholder = 'Enter new avatar URL';
     input.required = true;
 
-    const button = document.createElement('button');
-    button.type = 'submit';
-    button.className = 'btn btn-success btn-block my-3';
-    button.textContent = 'Change Profile Image';
+    const button = createButton(
+      'Change Profile Image',
+      'btn btn-success btn-block my-3',
+      null,
+    );
 
-    formGroup.appendChild(input);
-    form.appendChild(formGroup);
-    form.appendChild(button);
+    const form = createElement(
+      'form',
+      { id: 'avatarForm', class: 'mt-3' },
+      createElement('div', { class: 'form-group' }, input),
+      button,
+    );
 
-    profileImageWrapper.appendChild(img);
-    profileImageWrapper.appendChild(form);
+    const profileImageWrapper = createElement(
+      'div',
+      { class: 'profile-image-wrapper text-center' },
+      img,
+      form,
+    );
 
-    // Profile Information Section
-    const profileInfo = document.createElement('div');
-    profileInfo.className = 'profile-info py-3';
+    const profileInfo = createElement(
+      'div',
+      { class: 'profile-info py-3' },
+      createElement('h3', {}, profileData.name),
+      createElement('p', {}, profileData.email),
+      createElement('p', {}, `Credits: ${profileData.credits}`),
+    );
 
-    const username = document.createElement('h3');
-    username.textContent = profileData.name;
-
-    const userEmail = document.createElement('p');
-    userEmail.textContent = profileData.email;
-
-    const creditsParagraph = document.createElement('p');
-    creditsParagraph.textContent = `Credits: ${profileData.credits}`;
-
-    profileInfo.appendChild(username);
-    profileInfo.appendChild(userEmail);
-    profileInfo.appendChild(creditsParagraph);
-
-    // Constructing the layout for profile info
-    const colImg = document.createElement('div');
-    colImg.className = 'col-md-6';
-    colImg.appendChild(profileImageWrapper);
-
-    const colInfo = document.createElement('div');
-    colInfo.className = 'col-md-6 bg-light';
-    colInfo.appendChild(profileInfo);
-
-    const row = document.createElement('div');
-    row.className = 'row';
-    row.appendChild(colImg);
-    row.appendChild(colInfo);
-
-    const section = document.createElement('section');
-    section.className = 'container my-4';
-    section.appendChild(row);
-
+    const colImg = createElement(
+      'div',
+      { class: 'col-md-6' },
+      profileImageWrapper,
+    );
+    const colInfo = createElement(
+      'div',
+      { class: 'col-md-6 bg-light' },
+      profileInfo,
+    );
+    const row = createElement('div', { class: 'row' }, colImg, colInfo);
+    const section = createElement('section', { class: 'container my-4' }, row);
     mainContainer.appendChild(section);
 
-    // Listings Section
     if (profileData.listings && profileData.listings.length > 0) {
-      const listingSection = document.createElement('section');
-      listingSection.className = 'container my-5';
-
-      const listingsContainer = document.createElement('div');
-      listingsContainer.className = 'row';
-      listingSection.appendChild(listingsContainer);
-
-      const listingsTitle = document.createElement('h3');
-      listingsTitle.className = 'mb-4 border-bottom';
-      listingsTitle.textContent = 'My Listings';
-      listingsContainer.appendChild(listingsTitle);
+      const listingsContainer = createElement(
+        'div',
+        { class: 'row' },
+        createElement('h3', { class: 'mb-4 border-bottom' }, 'My Listings'),
+      );
 
       profileData.listings.forEach((listing) => {
         if (!listing.seller) {
           listing.seller = { name: profileData.name };
         }
-
         const listingElement = createPostCard({
           post: listing,
           withHref: true,
@@ -116,6 +91,11 @@ export async function initProfilePage() {
         listingsContainer.appendChild(listingElement);
       });
 
+      const listingSection = createElement(
+        'section',
+        { class: 'container my-5' },
+        listingsContainer,
+      );
       mainContainer.appendChild(listingSection);
     }
   } catch (error) {

@@ -40,7 +40,7 @@ export function createPostCard({ post, withHref = true }) {
       await deletePost(post.id);
     });
 
-    postCard.appendChild(editButton);
+    postContent.appendChild(editButton);
     postContent.appendChild(deleteButton);
   }
 

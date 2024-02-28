@@ -1,3 +1,4 @@
+import { headers } from '../api/headers.js';
 import { displayMessage } from './displayMessage.js';
 /**
  * Displays the modal for editing a post.
@@ -41,7 +42,7 @@ function editModal(post) {
                 </div>
                 <div class="mb-3">
                   <label for="postBody" class="form-label">Body</label>
-                  <textarea class="form-control" id="postBody" required>${post.body}</textarea>
+                  <textarea class="form-control" id="postBody" required>${post.description}</textarea>
                 </div>
                 <div class="mb-3">
                   <label for="postMedia" class="form-label">Media URL</label>
@@ -77,21 +78,18 @@ function editModalSubmission(post, formId, modalId) {
 
     // Get the values from the form
     const title = document.getElementById('postTitle').value;
-    const body = document.getElementById('postBody').value;
-    const media = document.getElementById('postMedia').value;
-
-    const accessToken = localStorage.getItem('accessToken');
+    const description = document.getElementById('postBody').value;
+    const media = document.getElementById('postMedia').value
+      ? [document.getElementById('postMedia').value]
+      : [];
 
     try {
       const response = await fetch(
         `https://api.noroff.dev/api/v1/auction/listings/${post.id}`,
         {
           method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${accessToken}`,
-          },
-          body: JSON.stringify({ title, body, media }),
+          body: JSON.stringify({ title, description, media }),
+          headers: headers('application/json'),
         },
       );
 

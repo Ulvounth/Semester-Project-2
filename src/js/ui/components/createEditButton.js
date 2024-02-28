@@ -2,8 +2,7 @@ import { createElement } from '../../utils/index.js';
 
 export function createEditButton(onClick) {
   const editButton = createElement('button', {
-    className:
-      'edit-post btn btn-secondary position-absolute top-0 end-0 me-2 mt-2',
+    className: 'edit-post btn btn-secondary me-2 mt-2',
     ariaLabel: 'Edit post',
   });
 
