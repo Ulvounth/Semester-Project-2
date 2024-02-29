@@ -53,10 +53,11 @@ export function createPostContent({ post, withHref }) {
     class: 'card-body',
   });
 
-  const postTitle = createElement('h4', {
-    class: 'card-title',
-    textContent: title,
+  const postTitle = createElement('h5', {
+    className: 'card-title',
+    textContent: title.length > 20 ? `${title.substring(0, 15)} ...` : title,
   });
+  postTitle.setAttribute('title', title); // Tooltip to show full title on hover
 
   const buyButton = createElement('button', {
     class: 'btn btn-success py-1 m-1',
