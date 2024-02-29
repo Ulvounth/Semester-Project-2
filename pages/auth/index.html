@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join BidBazaar to start bidding on and listing items in our auction marketplace."
+    />
+    <title>BidBazaar | Login/Register</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/0ea37d4b08.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+
+    <script src="/src/js/ui/authActive.js" defer></script>
+    <script type="module" src="/src/js/index.js" defer></script>
+  </head>
+  <body
+    class="d-flex align-items-center justify-content-center flex-column bg-secondary-subtle vh-100"
+  >
+    <div
+      class="auth-container bg-white rounded-3 shadow position-relative overflow-hidden"
+      id="auth-container"
+      aria-label="Authentication Container"
+    >
+      <!-- Registration form -->
+      <div class="form-container sign-up">
+        <!-- Home button -->
+        <a href="/" aria-label="Return to home">
+          <div class="bg-warning text-center p-2">
+            <i class="fa-solid fa-house fs-5 text-dark"></i>
+          </div>
+        </a>
+        <!-- Sign up form -->
+        <form
+          class="d-flex flex-column align-items-center justify-content-center gap-2"
+          id="registerForm"
+          aria-label="Sign Up Form"
+        >
+          <h1>Create Account</h1>
+          <!-- Input fields for the registration form -->
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="Username"
+            id="registerName"
+            required
+            aria-describedby="message-includes"
+          />
+          <div id="message-includes"></div>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Email"
+            id="registerEmail"
+            required
+            aria-describedby="message-endswith"
+          />
+          <div id="message-endswith"></div>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Password"
+            id="registerPassword"
+            required
+            aria-describedby="message-length"
+          />
+          <div id="message-length"></div>
+          <input
+            type="url"
+            class="form-control"
+            name="avatar"
+            placeholder="Avatar URL"
+            id="registerAvatar"
+            aria-describedby="Avatar URL optional"
+          />
+          <!-- Sign up button -->
+          <button
+            type="submit"
+            class="btn btn-primary text-warning link-success border-0 bg-dark text-uppercase px-4 my-3"
+            aria-label="Sign Up Button"
+          >
+            Sign Up
+          </button>
+          <div id="message-registration"></div>
+        </form>
+      </div>
+
+      <div class="form-container sign-in">
+        <!-- Home button -->
+        <a href="/" aria-label="Return to home">
+          <div class="bg-warning text-center p-2">
+            <i class="fa-solid fa-house fs-5 text-dark"></i>
+          </div>
+        </a>
+        <!-- Login form -->
+        <form
+          class="d-flex flex-column align-items-center justify-content-center gap-2"
+          id="loginForm"
+          aria-label="Login Form"
+        >
+          <h1>Login</h1>
+          <!-- Input fields for the login form -->
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Email"
+            id="loginEmail"
+            required
+          />
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Password"
+            id="loginPassword"
+            minlength="8"
+            required
+          />
+          <div id="message"></div>
+          <!-- Login button -->
+          <button
+            type="submit"
+            class="btn btn-primary text-warning link-success border-0 bg-dark text-uppercase px-4 my-3"
+            aria-label="Login Button"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+
+      <!-- Toggle container for switching between login and registration -->
+      <div
+        class="toggle-container"
+        aria-label="Toggle between Login and Register"
+      >
+        <div class="toggle">
+          <!-- Login panel -->
+          <div class="toggle-panel toggle-left bg-dark">
+            <h1>Welcome Back!</h1>
+            <p>
+              Provide your personal details to access all the features of the
+              site
+            </p>
+            <button
+              class="hidden btn btn-outline-success bg-dark text-uppercase px-4 my-3"
+              id="login"
+            >
+              Login
+            </button>
+          </div>
+          <!-- Register panel -->
+          <div class="toggle-panel toggle-right bg-dark">
+            <h1>Hello!</h1>
+            <p>
+              Sign up with your personal information to access all the features
+              of our site
+            </p>
+            <button
+              class="hidden btn btn-outline-success bg-dark text-uppercasepx-4 my-3"
+              id="register"
+            >
+              Sign Up
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

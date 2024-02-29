@@ -1,0 +1,20 @@
+@import 'variables';
+
+// Custom navbar styling
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+}
+
+/* Menu bar */
+.mobile {
+  display: none;
+  align-items: center;
+}
+
+#close {
+  display: none;
+}

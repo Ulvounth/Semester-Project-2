@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join BidBazaar, your ultimate online auction destination. Sign up to sell, bid, and win. Experience the thrill of the auction today!"
+    />
+
+    <title>BidBazaar | Sell</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/0ea37d4b08.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <script src="/mobilemenu.js" defer></script>
+    <script type="module" src="/src/js/index.js" defer></script>
+  </head>
+  <body>
+    <header class="sticky-top bg-light">
+      <div class="text-bg-dark p-3">
+        <div class="container header">
+          <!-- Navigation header with logo and links -->
+          <a
+            href="/"
+            class="text-decoration-none link-light"
+            aria-label="Back to Home"
+            ><h1 class="logo">
+              <span class="text-warning">Bid</span>Bazaar
+            </h1></a
+          >
+          <div class="navbar gap-5 justify-content-start">
+            <!-- Search form -->
+            <form class="d-flex" aria-label="Site Search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+
+            <!-- Profile and authentication links -->
+            <div>
+              <a
+                class="btn btn-outline-success ms-2 bg-dark"
+                href="/pages/profile/"
+                data-visible="loggedIn"
+                >Profile</a
+              >
+              <button
+                type="button"
+                class="btn btn-outline-success ms-2 bg-dark"
+                id="logout-btn"
+                data-visible="loggedIn"
+              >
+                Logout
+              </button>
+              <a
+                class="btn btn-outline-success ms-2 bg-dark"
+                href="/pages/auth/"
+                data-visible="loggedOut"
+                >Login / Sign Up</a
+              >
+            </div>
+            <a href="#" aria-label="Close Menu" id="close"
+              ><i class="fa-solid fa-xmark"></i
+            ></a>
+          </div>
+          <div class="mobile" aria-label="Open Mobile Menu">
+            <i id="bar" class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary navigation -->
+      <div class="container">
+        <div class="border-bottom border-dark-subtle">
+          <ul
+            class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
+          >
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="/pages/listings"
+                >Listings</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold active-nav"
+                aria-current="page"
+                href="#"
+                >Sell</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main class="container my-4">
+      <h1 class="text-center mb-2">Sell online at BidBazaar!</h1>
+      <!-- Introduction section for sellers -->
+      <section class="my-4">
+        <div class="row gap-3">
+          <!-- Each card describes a benefit or feature of selling on BidBazaar -->
+          <div class="col">
+            <div class="card h-100 text-center bg-info m-auto">
+              <div class="card-body">
+                <div class="card-icon mb-2">
+                  <i class="fas fa-user-plus fa-3x"></i>
+                </div>
+                <h3 class="card-title">Sign Up & Get Credits</h3>
+                <p class="card-text fs-5">
+                  Join BidBazaar and receive 1,000 credits to start your bidding
+                  or selling journey.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 text-center bg-info m-auto">
+              <div class="card-body">
+                <div class="card-icon mb-2">
+                  <i class="fas fa-gavel fa-3x"></i>
+                </div>
+                <h3 class="card-title">Bid or List Items</h3>
+                <p class="card-text fs-5">
+                  Explore and bid on a variety of items, or list your own for
+                  others to bid on.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 text-center bg-info m-auto">
+              <div class="card-body">
+                <div class="card-icon mb-2">
+                  <i class="fas fa-trophy fa-3x"></i>
+                </div>
+                <h3 class="card-title">Win, Sell, Earn</h3>
+                <p class="card-text fs-5">
+                  Win bids to claim unique items, sell your items for credits,
+                  and keep the auction excitement going!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section visible to logged-out users prompting them to register or login -->
+      <section class="d-flex flex-column justify-content-center gap-3">
+        <h2 class="text-center" data-visible="loggedOut">
+          Start Quickly - Register Your Account Today!
+        </h2>
+        <a
+          class="btn btn-primary text-warning link-light border-0 bg-dark text-uppercase px-4 my-3"
+          href="/pages/auth/"
+          data-visible="loggedOut"
+          >Login / Sign Up</a
+        >
+      </section>
+
+      <!-- New listing creation form for logged-in users -->
+      <section data-visible="loggedIn">
+        <h2>Create New Listing</h2>
+        <form
+          id="createListingForm"
+          class="d-flex flex-column gap-3 mt-4"
+          data-visible="loggedIn"
+        >
+          <input
+            type="text"
+            name="title"
+            required
+            placeholder="Title"
+            class="form-control"
+          />
+          <textarea
+            name="description"
+            placeholder="Description"
+            class="form-control"
+          ></textarea>
+          <input
+            type="url"
+            name="media"
+            placeholder="Media URL"
+            class="form-control"
+          />
+          <input
+            type="datetime-local"
+            name="endsAt"
+            required
+            class="form-control"
+          />
+          <button type="submit" class="btn btn-primary">Create Listing</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white py-3">
+      <div class="container">
+        <!-- Footer content: contact info, copyright notice, and built with -->
+        <div class="row">
+          <div class="col-md-4 text-center text-md-start">
+            <a href="/" class="text-decoration-none link-light"
+              ><h1 class="logo">
+                <span class="text-warning">Bid</span>Bazaar
+              </h1></a
+            >
+          </div>
+          <div class="col-md-4 text-center">
+            <h5 class="text-warning">Built with</h5>
+            <ul class="list-unstyled">
+              <li>HTML</li>
+              <li>Javascript</li>
+              <li>Bootstrap</li>
+              <li>Sass</li>
+            </ul>
+          </div>
+          <div class="col-md-4 d-flex flex-column text-center text-md-end">
+            <h5 class="text-warning">Contact</h5>
+            <a href="https://www.linkedin.com" class="text-white me-2"
+              ><i class="fab fa-linkedin"></i> Linkedin</a
+            >
+            <a href="https://www.facebook.com" class="text-white me-2"
+              ><i class="fab fa-facebook-f"></i> Facebook</a
+            >
+            <a href="https://www.twitter.com" class="text-white me-2"
+              ><i class="fab fa-twitter"></i> Twitter</a
+            >
+          </div>
+        </div>
+        <div class="text-center my-3">
+          <p class="mb-0">Copyright © 2024 Andreas Ulvund</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
