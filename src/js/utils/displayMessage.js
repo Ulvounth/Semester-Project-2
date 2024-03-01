@@ -11,16 +11,3 @@ export function displayMessage(parent, messageType, message) {
 
   container.innerHTML = `<div class="alert ${messageType}">${message}</div>`;
 }
-
-/**
- * Clears any messages from a specified container. This is useful for removing
- * feedback messages before a new action is taken.
- *
- * @param {string} containerSelector The selector for the container element whose messages should be cleared.
- */
-export function clearMessage(containerSelector) {
-  const container = document.querySelector(containerSelector);
-  if (container) {
-    container.innerHTML = '';
-  }
-}

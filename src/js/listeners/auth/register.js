@@ -59,7 +59,7 @@ export async function registerListener() {
         displayMessage(
           '#message-registration',
           'alert-danger',
-          error.message || 'There was a problem creating your account',
+          error || 'There was a problem creating your account',
         );
       }
     });

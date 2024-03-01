@@ -74,10 +74,6 @@ export async function initSinglePostPage() {
     }
   } catch (error) {
     console.error('Error fetching listing:', error);
-    displayMessage(
-      '#post',
-      'alert-danger',
-      'There was an error fetching the listing.',
-    );
+    displayMessage('#post', 'alert-danger', error);
   }
 }

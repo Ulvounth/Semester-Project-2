@@ -1,5 +1,4 @@
 import { headers } from '../headers.js';
-
 /**
  * Asynchronously posts a bid to a specific listing identified by its ID.
  * This function sends a POST request to the API's endpoint for bids on a particular listing,
@@ -27,7 +26,7 @@ export async function getBid(id, amount) {
     return await response.json();
   } else {
     const errorResponse = await response.json();
-    console.error(`Failed to place a bid on listing ${id}:`, errorResponse);
-    throw new Error(response.statusText);
+    const errorMessage = errorResponse.errors[0].message;
+    throw new Error(errorMessage);
   }
 }
