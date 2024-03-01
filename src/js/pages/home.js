@@ -31,11 +31,7 @@ async function initHomePage() {
     updateLoginVisibility();
   } catch (error) {
     console.error('Error fetching posts:', error);
-    displayMessage(
-      '#posts',
-      'alert-danger',
-      'There was an error fetching the posts.',
-    );
+    displayMessage('#endingSoon', 'alert-danger', error);
   }
 }
 

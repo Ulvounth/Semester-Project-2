@@ -40,11 +40,7 @@ export function handleBidSubmission() {
       setTimeout(() => window.location.reload(), 1500); // Adjusted timeout for user to read the message
     } catch (error) {
       console.error('Bid submission error:', error);
-      displayMessage(
-        '#messageFeedback',
-        'alert-danger',
-        'Failed to place your bid, please try again',
-      );
+      displayMessage('#messageFeedback', 'alert-danger', error);
     }
   });
 }

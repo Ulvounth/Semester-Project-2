@@ -121,10 +121,6 @@ export async function initProfilePage() {
     }
   } catch (error) {
     console.error('Failed to fetch profile:', error);
-    displayMessage(
-      '#profileContainer',
-      'alert-danger',
-      'There was an error fetching the profile.',
-    );
+    displayMessage('#profileContainer', 'alert-danger', error);
   }
 }
