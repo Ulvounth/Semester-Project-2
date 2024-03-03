@@ -36,7 +36,7 @@
   </head>
   <body>
     <header class="sticky-top bg-light">
-      <div class="text-bg-dark p-3">
+      <nav class="text-bg-dark p-3" aria-label="Main navigation">
         <div class="container header">
           <!-- Logo and home link -->
           <a
@@ -49,17 +49,6 @@
 
           <!-- Navigation bar with search and user options -->
           <div class="navbar gap-5 justify-content-start">
-            <!-- Search form -->
-            <form class="d-flex" aria-label="Quick search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-primary" type="submit">Search</button>
-            </form>
-
             <!-- User action buttons -->
             <div>
               <a
@@ -100,10 +89,10 @@
             <i id="bar" class="fa-solid fa-bars"></i>
           </div>
         </div>
-      </div>
+      </nav>
 
       <!-- Secondary navigation bar -->
-      <div class="container">
+      <nav class="container" aria-label="secondary navigation">
         <div class="border-bottom border-dark-subtle">
           <ul
             class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
@@ -128,7 +117,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
 
     <main class="container my-4">
@@ -176,11 +165,11 @@
       </section>
 
       <!-- Ending Soon section -->
-      <section class="my-5" aria-label="Auctions Ending Soon">
+      <section class="my-5" aria-label="Auctions Closing Soon">
         <div
           class="d-flex align-items-center justify-content-between mb-4 border-bottom"
         >
-          <h2>Ending Soon</h2>
+          <h2>Closing Soon</h2>
         </div>
         <div id="endingSoon" class="row">
           <!-- Placeholder for dynamic content -->

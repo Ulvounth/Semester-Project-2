@@ -33,7 +33,7 @@
   </head>
   <body>
     <header class="sticky-top bg-light">
-      <div class="text-bg-dark p-3">
+      <nav class="text-bg-dark p-3" aria-label="Main navigation">
         <div class="container header">
           <!-- Logo and Navigation -->
           <a
@@ -46,16 +46,6 @@
 
           <!-- Search Form and Authentication Links -->
           <div class="navbar gap-5 justify-content-start">
-            <form class="d-flex" aria-label="Search Form">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-primary" type="submit">Search</button>
-            </form>
-
             <div>
               <!-- Profile and Logout Links -->
               <a
@@ -90,10 +80,10 @@
             <i id="bar" class="fa-solid fa-bars"></i>
           </div>
         </div>
-      </div>
+      </nav>
 
       <!-- Secondary Navigation -->
-      <div class="container">
+      <nav class="container" aria-label="secondary navigation">
         <div class="border-bottom border-dark-subtle">
           <ul
             class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
@@ -114,65 +104,9 @@
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
-    <main id="profileContainer">
-      <!-- Accordion for Listings and Bids -->
-      <section class="container accordion" id="profileAccordion">
-        <div class="card">
-          <div class="card-header" id="headingOne">
-            <h2 class="mb-0">
-              <button
-                class="btn btn-link btn-block text-left"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapseOne"
-                aria-expanded="true"
-                aria-controls="collapseOne"
-              >
-                My listings
-              </button>
-            </h2>
-          </div>
-          <div
-            id="collapseOne"
-            class="collapse show"
-            aria-labelledby="headingOne"
-            data-parent="#profileAccordion"
-          >
-            <div class="card-body">
-              <!-- Dynamic content for user listings will be loaded here -->
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingTwo">
-            <h2 class="mb-0">
-              <button
-                class="btn btn-link btn-block text-left collapsed"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-              >
-                My bids
-              </button>
-            </h2>
-          </div>
-          <div
-            id="collapseTwo"
-            class="collapse"
-            aria-labelledby="headingTwo"
-            data-parent="#profileAccordion"
-          >
-            <div class="card-body">
-              <!-- Dynamic content for user bids will be loaded here -->
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    <main id="profileContainer"></main>
     <footer class="bg-dark text-white py-3">
       <div class="container">
         <div class="row">

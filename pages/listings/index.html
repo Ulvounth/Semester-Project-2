@@ -34,7 +34,7 @@
   </head>
   <body>
     <header class="sticky-top bg-light">
-      <div class="text-bg-dark p-3">
+      <nav class="text-bg-dark p-3" aria-label="Main navigation">
         <div class="container header">
           <!-- Logo linking back to the homepage -->
           <a
@@ -47,16 +47,6 @@
 
           <!-- Navigation bar with search functionality -->
           <div class="navbar gap-5 justify-content-start">
-            <form class="d-flex" aria-label="Site search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search query"
-              />
-              <button class="btn btn-primary" type="submit">Search</button>
-            </form>
-
             <!-- User authentication and profile links -->
             <div>
               <a
@@ -93,10 +83,10 @@
             <i id="bar" class="fa-solid fa-bars"></i>
           </div>
         </div>
-      </div>
+      </nav>
 
       <!-- Secondary navigation for page specific links -->
-      <div class="container">
+      <nav class="container" aria-label="secondary navigation">
         <div class="border-bottom border-dark-subtle">
           <ul
             class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
@@ -120,7 +110,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
 
     <main>
@@ -136,6 +126,16 @@
           <option selected value="all">All</option>
           <option value="newest">Newest</option>
         </select>
+        <label for="filter-posts-select" class="flex flex-col">
+          Search
+          <input
+            id="filter-posts-search"
+            class="form-control p-2 shadow transition duration-300 ease-in-out"
+            type="text"
+            placeholder="search"
+            aria-label="search input"
+          />
+        </label>
 
         <!-- Container for listing posts -->
         <div id="posts" class="row">

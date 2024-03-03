@@ -33,7 +33,7 @@
   </head>
   <body>
     <header class="sticky-top bg-light">
-      <div class="text-bg-dark p-3">
+      <nav class="text-bg-dark p-3" aria-label="Main navigation">
         <div class="container header">
           <!-- Navigation header with logo and links -->
           <a
@@ -45,17 +45,6 @@
             </h1></a
           >
           <div class="navbar gap-5 justify-content-start">
-            <!-- Search form -->
-            <form class="d-flex" aria-label="Site Search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-primary" type="submit">Search</button>
-            </form>
-
             <!-- Profile and authentication links -->
             <div>
               <a
@@ -87,10 +76,10 @@
             <i id="bar" class="fa-solid fa-bars"></i>
           </div>
         </div>
-      </div>
+      </nav>
 
       <!-- Secondary navigation -->
-      <div class="container">
+      <nav class="container" aria-label="secondary navigation">
         <div class="border-bottom border-dark-subtle">
           <ul
             class="d-flex flex-row justify-content-between navbar-nav me-auto mb-2 mb-lg-0"
@@ -116,7 +105,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
 
     <main class="container my-4">
