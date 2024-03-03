@@ -94,7 +94,6 @@ function editModalSubmission(post, formId, modalId) {
       );
 
       if (response.ok) {
-        // Handle successful update here...
         const modalElement = document.getElementById(modalId);
         const modalInstance = bootstrap.Modal.getInstance(modalElement);
         modalInstance.hide();

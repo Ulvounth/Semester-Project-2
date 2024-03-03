@@ -36,7 +36,6 @@ export function handleBidSubmission() {
         'Your bid is now the highest!',
       );
 
-      // Optionally, fetch and display updated listing details or refresh the page
       setTimeout(() => window.location.reload(), 1500); // Adjusted timeout for user to read the message
     } catch (error) {
       console.error('Bid submission error:', error);

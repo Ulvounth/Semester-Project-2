@@ -21,7 +21,6 @@ export function initAvatarUpdateForm() {
       try {
         const response = await updateProfileImage(avatarUrl);
 
-        // Assuming the API response includes the new avatar URL
         document.getElementById('profileAvatar').src = response.avatar;
 
         avatarUrlInput.value = '';
