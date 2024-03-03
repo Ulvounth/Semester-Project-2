@@ -1,7 +1,8 @@
 <h1>Creating an auction website</h1>
 <p>Semester Project 2 @ Noroff School of technology and digital media</p>
 
-![semester-2](https://github.com/Ulvounth/Semester-Project-2/assets/98667510/820f33c2-7ff0-46f5-bc0d-d07e43f32c64)
+![2024-03-03](https://github.com/Ulvounth/Semester-Project-2/assets/98667510/ea7966ae-5486-4bf8-bf59-52e12c0ffea8)
+
 
 
 .
@@ -52,8 +53,8 @@ npm run build
 | --- | --- |
 | Gantt Chart | https://github.com/users/Ulvounth/projects/1/views/8 |
 | Kanban Board | https://github.com/users/Ulvounth/projects/1/views/1 |
-| Design prototype | https://www.figma.com/file/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=0%3A1&mode=design&t=JZQ9H85WOI5FOTfd-1 |
-| Style Guide | https://www.figma.com/file/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=10%3A23&mode=design&t=JZQ9H85WOI5FOTfd-1 |
+| Design prototype | https://www.figma.com/proto/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=116-491&t=K52TqRNLYmyreX3V-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=116%3A491&show-proto-sidebar=1&mode=design |
+| Style Guide | https://www.figma.com/proto/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=148-2&t=DGRkGbZlWhSN9dMO-1&scaling=min-zoom&page-id=10%3A23&mode=design |
 | Website host | https://bidbazaarr.netlify.app/ |
 | Repositary | https://github.com/Ulvounth/Semester-Project-2.git |
 
