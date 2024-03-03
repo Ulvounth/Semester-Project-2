@@ -49,7 +49,7 @@ npm run build
 
 ## Links
 
-| Tool | Link |
+| Resource | URL |
 | --- | --- |
 | Gantt Chart | https://github.com/users/Ulvounth/projects/1/views/8 |
 | Kanban Board | https://github.com/users/Ulvounth/projects/1/views/1 |
