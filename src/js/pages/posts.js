@@ -54,6 +54,19 @@ export async function initPostsPage(initialFilter = 'all') {
       fetchAndDisplayPosts(filterSelect.value),
     );
   }
+  const searchInput = document.getElementById('filter-posts-search');
+  if (searchInput) {
+    searchInput.addEventListener('input', async (e) => {
+      const searchValue = e.target.value.toLowerCase();
+      const posts = await allPosts();
+      const filteredPosts = posts.filter(
+        (post) =>
+          post.description?.toLowerCase().includes(searchValue) ||
+          post.seller.name?.toLowerCase().includes(searchValue),
+      );
+      displayPosts(filteredPosts);
+    });
+  }
 
   // Initial fetch and display of posts based on provided initial filter or default
   await fetchAndDisplayPosts(initialFilter);

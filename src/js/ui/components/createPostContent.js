@@ -21,7 +21,7 @@ import {
  *                        content includes the post's media (if available), title, and an expiration indicator.
  */
 export function createPostContent({ post, withHref }) {
-  const { id, title, media } = post;
+  const { id, title, media, seller } = post;
 
   const postContent = createElement('div', {
     class: 'card position-relative shadow border-0',
@@ -57,7 +57,16 @@ export function createPostContent({ post, withHref }) {
     className: 'card-title',
     textContent: title.length > 20 ? `${title.substring(0, 15)} ...` : title,
   });
-  postTitle.setAttribute('title', title); // Tooltip to show full title on hover
+  postTitle.setAttribute('title', title);
+
+  // Create the seller name element with user icon
+  const userIcon = createElement('i', { class: 'fa-solid fa-user' });
+  const sellerNameText = document.createTextNode(` ${seller.name}`);
+  const sellerName = createElement('p', {
+    className: 'card-text',
+  });
+  sellerName.appendChild(userIcon);
+  sellerName.appendChild(sellerNameText);
 
   const buyButton = createElement('button', {
     class: 'btn btn-success py-1 m-1',
@@ -78,6 +87,7 @@ export function createPostContent({ post, withHref }) {
 
   postContent.appendChild(cardBody);
   cardBody.appendChild(postTitle);
+  cardBody.appendChild(sellerName);
   cardBody.appendChild(expirationIndicator);
   postContent.appendChild(buyButton);
 
