@@ -53,8 +53,8 @@ npm run build
 | --- | --- |
 | Gantt Chart | https://github.com/users/Ulvounth/projects/1/views/8 |
 | Kanban Board | https://github.com/users/Ulvounth/projects/1/views/1 |
-| Design Prototype | https://www.figma.com/file/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=0%3A1&mode=design&t=BkRmkmy7KYX3p07W-1 |
-| Style Guide | https://www.figma.com/file/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=10%3A23&mode=design&t=BkRmkmy7KYX3p07W-1 |
+| Design Prototype | https://www.figma.com/file/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=0%3A1&mode=design&t=MBqg1pjXGfCoamiT-1 |
+| Style Guide | https://www.figma.com/file/AkCUNFpxTYQJXH2YX7UzYp/Semester-project-2?type=design&node-id=10%3A23&mode=design&t=MBqg1pjXGfCoamiT-1 |
 | Hosted Demo | https://bidbazaarr.netlify.app/ |
 | Repositary | https://github.com/Ulvounth/Semester-Project-2.git |
 
