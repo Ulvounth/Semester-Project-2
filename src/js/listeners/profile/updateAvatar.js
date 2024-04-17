@@ -8,6 +8,7 @@ import { displayMessage } from '../../utils/index.js';
  */
 export function initAvatarUpdateForm() {
   const form = document.getElementById('avatarForm');
+  const profileAvatar = document.getElementById('profileAvatar');
 
   if (!form) return; // Exit if the form is not found on the current page
 
@@ -20,8 +21,7 @@ export function initAvatarUpdateForm() {
     if (avatarUrl) {
       try {
         const response = await updateProfileImage(avatarUrl);
-
-        document.getElementById('profileAvatar').src = response.avatar;
+        profileAvatar.src = response.avatar;
 
         avatarUrlInput.value = '';
         displayMessage(

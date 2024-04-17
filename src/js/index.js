@@ -21,7 +21,6 @@ switch (path) {
   case '/pages/profile/':
     pages.initProfilePage();
     listeners.logoutListener();
-    listeners.initAvatarUpdateForm();
     break;
 
   case '/pages/listings/':

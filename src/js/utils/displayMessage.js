@@ -11,3 +11,10 @@ export function displayMessage(parent, messageType, message) {
 
   container.innerHTML = `<div class="alert ${messageType}">${message}</div>`;
 }
+
+export function clearMessage(formSelector) {
+  const messageDiv = document.querySelector(`${formSelector} .message`);
+  if (messageDiv) {
+    messageDiv.textContent = '';
+  }
+}

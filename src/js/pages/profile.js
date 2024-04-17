@@ -4,6 +4,7 @@ import { createPostCard } from '../ui/components/index.js';
 import { displayMessage } from '../utils/displayMessage.js';
 import { updateLoginVisibility } from '../ui/auth.js';
 import { createElement } from '../utils/createElement.js';
+import { initAvatarUpdateForm } from '../listeners/profile/updateAvatar.js';
 
 /**
  * Initializes the profile page by updating login visibility, fetching user profile and listings data,
@@ -32,6 +33,7 @@ export async function initProfilePage() {
     const img = createElement('img', {
       src: profileData.avatar || '/images/placeholder.jpg',
       alt: 'Profile Image',
+      id: 'profileAvatar',
       className: 'img-fluid rounded-circle',
       style: 'max-width: 200px; height: auto;',
       loading: 'lazy',
@@ -90,6 +92,9 @@ export async function initProfilePage() {
       row,
     );
     mainContainer.appendChild(section);
+
+    // Initialize the avatar update form functionalities
+    initAvatarUpdateForm();
 
     if (profileData.listings && profileData.listings.length > 0) {
       const listingsTitle = createElement(

@@ -21,6 +21,18 @@ export function submitCreateListingForm() {
       const media = formData.get('media') ? [formData.get('media')] : [];
       const endsAt = formData.get('endsAt');
 
+      // Validate endsAt to ensure it is in the future
+      const endsAtDate = new Date(endsAt);
+      const now = new Date();
+      if (endsAtDate <= now) {
+        displayMessage(
+          '#createListingForm',
+          'alert-danger',
+          'End date must be in the future.',
+        );
+        return;
+      }
+
       try {
         // Pass individual values as arguments, ensuring media is an array
         await createListing(title, description, media, endsAt);
